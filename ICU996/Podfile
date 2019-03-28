@@ -1,15 +1,32 @@
-# platform :ios, '9.0'
+platform :ios, '10.0'
+inhibit_all_warnings!
 
-target 'ICU996' do
-  use_frameworks!
-  
+def basic_component
+  # 基础组件
   pod 'SnapKit', '~> 4.2.0'
   pod 'Alamofire', '~> 4.7.3'
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'SDWebImage', '~> 4.4.6'
+end
+
+def ui_component
+  # UI 组件
+  # pod ''
+end
+
+def buz_component
+  # 业务组件
+  # pod ''
+end
+
+target 'ICU996' do
+  use_frameworks!
+
+  basic_component
+  ui_component
+  buz_component
 
   target 'ICU996Tests' do
     inherit! :search_paths
   end
-
 end
