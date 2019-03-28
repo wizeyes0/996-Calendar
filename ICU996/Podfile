@@ -19,12 +19,19 @@ def buz_component
   # pod ''
 end
 
+def debug_component
+  pod 'Reveal-SDK', :path => 'Reveal', :configurations => ['Debug']
+  pod 'FLEX', '~> 2.0', :configurations => ['Debug']
+end
+
 target 'ICU996' do
   use_frameworks!
 
   basic_component
   ui_component
   buz_component
+  
+  debug_component
 
   target 'ICU996Tests' do
     inherit! :search_paths

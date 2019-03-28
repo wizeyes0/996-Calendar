@@ -3,7 +3,9 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - FLEX (2.4.0)
   - ObjectMapper (3.4.2)
+  - Reveal-SDK (4)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -12,6 +14,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - AlamofireObjectMapper (~> 5.0)
+  - FLEX (~> 2.0)
+  - Reveal-SDK (from `Reveal`)
   - SDWebImage (~> 4.4.6)
   - SnapKit (~> 4.2.0)
 
@@ -19,17 +23,24 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - FLEX
     - ObjectMapper
     - SDWebImage
     - SnapKit
 
+EXTERNAL SOURCES:
+  Reveal-SDK:
+    :path: Reveal
+
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Reveal-SDK: 53c2b252e7d21750ada7697f2d548fa3235a5f7d
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 675f1fc526af81379992fc622506a96a577d45c2
+PODFILE CHECKSUM: af86ddbd0c76bc5ffaa1f2c6d2ae4a252cfaa57f
 
 COCOAPODS: 1.6.1
