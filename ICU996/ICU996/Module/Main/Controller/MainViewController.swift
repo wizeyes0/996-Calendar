@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         initialViews()
         initialLayouts()
+        
     }
     
     private func initialViews() {
