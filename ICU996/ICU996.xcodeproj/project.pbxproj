@@ -88,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E39E1DC224E6BC900BA4EFA /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				1E39E1D8224E5EE500BA4EFA /* ICUStartViewController.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		39B135D8B9B81A51E107D5DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +145,7 @@
 		84C7C9C6224C891E0088F501 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1E39E1DC224E6BC900BA4EFA /* Start */,
 				84C7C9D2224C93700088F501 /* Setting */,
 				84C7C9C8224C904B0088F501 /* Main */,
 				1E39E1DA224E67E300BA4EFA /* ICUSaying.swift */,
@@ -190,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				84C7C9C9224C90AA0088F501 /* MainViewController.swift */,
-				1E39E1D8224E5EE500BA4EFA /* ICUStartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
