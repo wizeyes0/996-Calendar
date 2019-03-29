@@ -40,7 +40,11 @@ class MainViewController: UIViewController {
     
     private func initialLayouts() {
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            if #available(iOS 11.0, *) {
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            } else {
+                make.top.equalTo(self.view.snp.top).offset(44)
+            }
             make.left.right.equalToSuperview()
             make.height.equalTo(120)
         }
