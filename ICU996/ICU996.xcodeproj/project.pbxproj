@@ -115,14 +115,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		8493C8A8224E53CE00D28C22 /* Conponent */ = {
+		8493C8A8224E53CE00D28C22 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				8493C8B7224E669800D28C22 /* IcuCalendar */,
 				8493C8B4224E63DC00D28C22 /* IcuTabber */,
 				8493C8AB224E53EE00D28C22 /* IcuHeader */,
 			);
-			path = Conponent;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		8493C8AB224E53EE00D28C22 /* IcuHeader */ = {
@@ -234,7 +234,7 @@
 		84D624AF224C833E007E397D /* ICU996 */ = {
 			isa = PBXGroup;
 			children = (
-				8493C8A8224E53CE00D28C22 /* Conponent */,
+				8493C8A8224E53CE00D28C22 /* Component */,
 				84C7C9CF224C93370088F501 /* Style */,
 				84C7C9C7224C89340088F501 /* Category */,
 				84C7C9C6224C891E0088F501 /* Module */,
@@ -627,6 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZZG7HSB6RX;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -647,6 +648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZZG7HSB6RX;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
