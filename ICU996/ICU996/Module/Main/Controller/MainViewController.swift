@@ -10,13 +10,20 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+
+    lazy var headerView: IcuHeaderView = {
+        let view = IcuHeaderView()
+        return view
+    }()
     
-    lazy private var testLabel: UILabel = {
-        let label = UILabel()
-        label.text = "ICU. Hello world"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 22)
-        return label
+    lazy var tabView: IcuTabView = {
+        let view = IcuTabView()
+        return view
+    }()
+    
+    lazy var calendarView: IcuCalendarView = {
+        let view = IcuCalendarView()
+        return view
     }()
 
     override func viewDidLoad() {
@@ -26,13 +33,29 @@ class MainViewController: UIViewController {
     }
     
     private func initialViews() {
-        view.addSubview(testLabel)
+        view.addSubview(headerView)
+        view.addSubview(tabView)
+        view.addSubview(calendarView)
     }
     
     private func initialLayouts() {
-        testLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        headerView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(120)
+        }
+        
+        tabView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(headerView.snp.bottom)
+            make.height.equalTo(44)
+        }
+        
+        calendarView.snp.makeConstraints { make in
+            make.top.equalTo(tabView.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
         }
     }
 }
+
 
