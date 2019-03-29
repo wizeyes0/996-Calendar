@@ -11,4 +11,14 @@ import UIKit
 // MARK: - 用来归档整体的 Font Style
 extension UIFont {
     
+    enum FontStyle: String {
+        case regular = "Regular"
+        case medium = "Medium"
+        case semibold = "Semibold"
+        case bold = "Bold"
+    }
+    
+    static func icuFont(_ fontStyle: FontStyle = .regular, size: CGFloat = 13.0) -> UIFont {
+        return UIFont(name: "PingFangSC-\(fontStyle.rawValue)", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
 }

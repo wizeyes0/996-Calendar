@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		449E9529D3C61B8D8DE6254B /* Pods_ICU996.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB744606DA04C0D8969A71D4 /* Pods_ICU996.framework */; };
 		5292FF641AF9DA2D28E4346D /* Pods_ICU996Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386FB4DD9B66CADCEE971A70 /* Pods_ICU996Tests.framework */; };
+		8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8AE224E543D00D28C22 /* IcuHeaderView.swift */; };
+		8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8B0224E574A00D28C22 /* UIColor+996.swift */; };
 		84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9C9224C90AA0088F501 /* MainViewController.swift */; };
 		84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CB224C91040088F501 /* UIColor+.swift */; };
 		84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CD224C92DF0088F501 /* UIViewController+.swift */; };
@@ -36,6 +38,8 @@
 		4A55BB2643321A312551C958 /* Pods-ICU996Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AA85AD781F02E031634A38C /* Pods-ICU996.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.debug.xcconfig"; path = "Target Support Files/Pods-ICU996/Pods-ICU996.debug.xcconfig"; sourceTree = "<group>"; };
 		71FE11A126EB0BDF065E5D93 /* Pods-ICU996.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.release.xcconfig"; path = "Target Support Files/Pods-ICU996/Pods-ICU996.release.xcconfig"; sourceTree = "<group>"; };
+		8493C8AE224E543D00D28C22 /* IcuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeaderView.swift; sourceTree = "<group>"; };
+		8493C8B0224E574A00D28C22 /* UIColor+996.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+996.swift"; sourceTree = "<group>"; };
 		84C7C9C9224C90AA0088F501 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84C7C9CB224C91040088F501 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		84C7C9CD224C92DF0088F501 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -85,6 +89,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8493C8A8224E53CE00D28C22 /* Conponent */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8AB224E53EE00D28C22 /* IcuHeader */,
+			);
+			path = Conponent;
+			sourceTree = "<group>";
+		};
+		8493C8AB224E53EE00D28C22 /* IcuHeader */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8AE224E543D00D28C22 /* IcuHeaderView.swift */,
+			);
+			path = IcuHeader;
+			sourceTree = "<group>";
+		};
 		84C7C9C6224C891E0088F501 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				84C7C9D0224C93490088F501 /* UIFont+996.swift */,
+				8493C8B0224E574A00D28C22 /* UIColor+996.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -166,6 +187,7 @@
 		84D624AF224C833E007E397D /* ICU996 */ = {
 			isa = PBXGroup;
 			children = (
+				8493C8A8224E53CE00D28C22 /* Conponent */,
 				84C7C9CF224C93370088F501 /* Style */,
 				84C7C9C7224C89340088F501 /* Category */,
 				84C7C9C6224C891E0088F501 /* Module */,
@@ -384,6 +406,8 @@
 				84D624B1224C833E007E397D /* AppDelegate.swift in Sources */,
 				84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
+				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
+				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
 				84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */,
 				84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */,
 				84C7C9D4224C93820088F501 /* SettingViewController.swift in Sources */,
