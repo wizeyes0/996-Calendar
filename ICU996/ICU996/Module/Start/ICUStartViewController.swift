@@ -31,7 +31,8 @@ class ICUStartViewController: UIViewController {
 
             return
         }
-
+        //已设置过薪水
+        UserDefaults.standard.set(true, forKey: "HasSetSalary")
         close()
     }
 }

@@ -30,9 +30,15 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         initialViews()
         initialLayouts()
-        
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let hasSetSalary = UserDefaults.standard.bool(forKey: "HasSetSalary")
+        if !hasSetSalary {
+            let startVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUStartViewController")
+            present(startVc, animated: true, completion: nil)
+        }
+    }
     private func initialViews() {
         view.addSubview(headerView)
         view.addSubview(tabView)
