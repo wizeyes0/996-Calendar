@@ -11,7 +11,7 @@ end
 
 def ui_component
   # UI 组件
-  # pod ''
+  pod 'AppCenter'
 end
 
 def buz_component
