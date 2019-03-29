@@ -17,14 +17,22 @@ class IcuHeaderView: UIView {
         return view
     }()
     
-    private var welcomeLabel: UILabel = {
+    lazy private var welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = "Hi, GUA!"
-        label.font = UIFont.icuFont(.semibold, size: 13)
+        label.font = UIFont.icuFont(.semibold, size: 28)
         label.textColor = UIColor.showColor()
         return label
     }()
     
+    lazy private var promptLabel: UILabel = {
+        let label = UILabel()
+        label.text = "工作再忙也别忘记按时下班哦!"
+        label.font = UIFont.icuFont(size: 17)
+        label.textColor = UIColor.showColor()
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialViews()
@@ -36,10 +44,26 @@ class IcuHeaderView: UIView {
     }
     
     private func initialViews() {
-        
+        addSubview(bakView)
+        bakView.addSubview(welcomeLabel)
+        bakView.addSubview(promptLabel)
     }
     
     private func initialLayouts() {
+        bakView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
+        welcomeLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(44)
+            make.height.equalTo(40)
+        }
+        
+        promptLabel.snp.makeConstraints { make in
+            make.top.equalTo(welcomeLabel.snp.bottom)
+            make.leading.equalTo(welcomeLabel)
+            make.height.equalTo(24)
+        }
     }
 }
