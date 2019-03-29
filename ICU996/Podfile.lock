@@ -5,19 +5,23 @@ PODS:
     - ObjectMapper (~> 3.4)
   - FLEX (2.4.0)
   - ObjectMapper (3.4.2)
+  - pop (1.0.12)
   - Reveal-SDK (4)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
   - SnapKit (4.2.0)
+  - SwiftyUserDefaults (4.0.0-beta.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - AlamofireObjectMapper (~> 5.0)
   - FLEX (~> 2.0)
+  - pop (~> 1.0.12)
   - Reveal-SDK (from `Reveal`)
   - SDWebImage (~> 4.4.6)
   - SnapKit (~> 4.2.0)
+  - SwiftyUserDefaults (= 4.0.0-beta.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,8 +29,10 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - FLEX
     - ObjectMapper
+    - pop
     - SDWebImage
     - SnapKit
+    - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
   Reveal-SDK:
@@ -37,10 +43,12 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Reveal-SDK: 53c2b252e7d21750ada7697f2d548fa3235a5f7d
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftyUserDefaults: 39ec70433f22f3052a64bc5fbfb34f46932b8bf1
 
-PODFILE CHECKSUM: af86ddbd0c76bc5ffaa1f2c6d2ae4a252cfaa57f
+PODFILE CHECKSUM: bce949043f47c49288907c3f23076854b2ecc673
 
 COCOAPODS: 1.6.1
