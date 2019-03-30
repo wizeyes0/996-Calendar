@@ -38,5 +38,6 @@ target 'ICU996' do
 
   target 'ICU996Tests' do
     inherit! :search_paths
+    pod 'Nimble', '~> 8.0.0'
   end
 end

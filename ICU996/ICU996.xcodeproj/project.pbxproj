@@ -21,6 +21,7 @@
 		8493C8B9224E66A900D28C22 /* IcuCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8B8224E66A900D28C22 /* IcuCalendarView.swift */; };
 		8493C8BC224E6DD200D28C22 /* IcuDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8BB224E6DD200D28C22 /* IcuDateHelper.swift */; };
 		8493C8C0224E6ED500D28C22 /* IcuCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8BF224E6ED500D28C22 /* IcuCacheManager.swift */; };
+		8493C8C2224F847600D28C22 /* IcuDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8C1224F847600D28C22 /* IcuDateTest.swift */; };
 		84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9C9224C90AA0088F501 /* MainViewController.swift */; };
 		84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CB224C91040088F501 /* UIColor+.swift */; };
 		84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CD224C92DF0088F501 /* UIViewController+.swift */; };
@@ -60,6 +61,7 @@
 		8493C8B8224E66A900D28C22 /* IcuCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCalendarView.swift; sourceTree = "<group>"; };
 		8493C8BB224E6DD200D28C22 /* IcuDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuDateHelper.swift; sourceTree = "<group>"; };
 		8493C8BF224E6ED500D28C22 /* IcuCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCacheManager.swift; sourceTree = "<group>"; };
+		8493C8C1224F847600D28C22 /* IcuDateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuDateTest.swift; sourceTree = "<group>"; };
 		84C7C9C9224C90AA0088F501 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84C7C9CB224C91040088F501 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		84C7C9CD224C92DF0088F501 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		8493C8C3224F88AE00D28C22 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8C1224F847600D28C22 /* IcuDateTest.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		84C7C9C6224C891E0088F501 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +299,7 @@
 		84D624C4224C8340007E397D /* ICU996Tests */ = {
 			isa = PBXGroup;
 			children = (
+				8493C8C3224F88AE00D28C22 /* Core */,
 				84D624C5224C8340007E397D /* ICU996Tests.swift */,
 				84D624C7224C8340007E397D /* Info.plist */,
 			);
@@ -335,6 +346,7 @@
 				84D624BD224C8340007E397D /* Sources */,
 				84D624BE224C8340007E397D /* Frameworks */,
 				84D624BF224C8340007E397D /* Resources */,
+				CE336774F5EAF6B25599D831 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,6 +479,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE336774F5EAF6B25599D831 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CE54C24FC8FD73C84EDB268E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -521,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D624C6224C8340007E397D /* ICU996Tests.swift in Sources */,
+				8493C8C2224F847600D28C22 /* IcuDateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZG7HSB6RX;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -697,7 +732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZG7HSB6RX;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
