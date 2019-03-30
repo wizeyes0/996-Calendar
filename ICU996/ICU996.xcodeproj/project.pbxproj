@@ -22,6 +22,8 @@
 		8493C8BC224E6DD200D28C22 /* IcuDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8BB224E6DD200D28C22 /* IcuDateHelper.swift */; };
 		8493C8C0224E6ED500D28C22 /* IcuCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8BF224E6ED500D28C22 /* IcuCacheManager.swift */; };
 		8493C8C2224F847600D28C22 /* IcuDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8C1224F847600D28C22 /* IcuDateTest.swift */; };
+		8493C8C5224FB57000D28C22 /* IcuCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8C4224FB57000D28C22 /* IcuCalendarViewModel.swift */; };
+		8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8493C8C8224FCF3F00D28C22 /* data_2019.plist */; };
 		84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9C9224C90AA0088F501 /* MainViewController.swift */; };
 		84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CB224C91040088F501 /* UIColor+.swift */; };
 		84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CD224C92DF0088F501 /* UIViewController+.swift */; };
@@ -63,6 +65,8 @@
 		8493C8BB224E6DD200D28C22 /* IcuDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuDateHelper.swift; sourceTree = "<group>"; };
 		8493C8BF224E6ED500D28C22 /* IcuCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCacheManager.swift; sourceTree = "<group>"; };
 		8493C8C1224F847600D28C22 /* IcuDateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuDateTest.swift; sourceTree = "<group>"; };
+		8493C8C4224FB57000D28C22 /* IcuCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCalendarViewModel.swift; sourceTree = "<group>"; };
+		8493C8C8224FCF3F00D28C22 /* data_2019.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data_2019.plist; sourceTree = "<group>"; };
 		84C7C9C9224C90AA0088F501 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84C7C9CB224C91040088F501 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		84C7C9CD224C92DF0088F501 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				8493C8B8224E66A900D28C22 /* IcuCalendarView.swift */,
+				8493C8C4224FB57000D28C22 /* IcuCalendarViewModel.swift */,
 			);
 			path = IcuCalendar;
 			sourceTree = "<group>";
@@ -195,6 +200,22 @@
 				8493C8C1224F847600D28C22 /* IcuDateTest.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		8493C8C6224FCEFE00D28C22 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8C7224FCF0E00D28C22 /* Work */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8493C8C7224FCF0E00D28C22 /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8C8224FCF3F00D28C22 /* data_2019.plist */,
+			);
+			path = Work;
 			sourceTree = "<group>";
 		};
 		84C7C9C6224C891E0088F501 /* Module */ = {
@@ -284,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				1ECB6F38224FBB5900DED811 /* ICU996.entitlements */,
+				8493C8C6224FCEFE00D28C22 /* Data */,
 				8493C8BA224E6CA700D28C22 /* Core */,
 				8493C8A8224E53CE00D28C22 /* Component */,
 				84C7C9CF224C93370088F501 /* Style */,
@@ -410,6 +432,7 @@
 			files = (
 				84D624BB224C8340007E397D /* LaunchScreen.storyboard in Resources */,
 				84D624B8224C8340007E397D /* Assets.xcassets in Resources */,
+				8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */,
 				84D624B6224C833E007E397D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +572,7 @@
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
 				84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */,
 				8493C8B3224E5A9000D28C22 /* IcuHeaderViewModel.swift in Sources */,
+				8493C8C5224FB57000D28C22 /* IcuCalendarViewModel.swift in Sources */,
 				8493C8BC224E6DD200D28C22 /* IcuDateHelper.swift in Sources */,
 				518DEAFA224F178100D18869 /* ICUFeedbackViewController.swift in Sources */,
 				84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */,

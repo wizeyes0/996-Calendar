@@ -5,10 +5,10 @@
 //  Created by Harry Twan on 2019/3/29.
 //  Copyright © 2019 Harry Duan. All rights reserved.
 //
+//  https://coderwall.com/p/b8pz5q/swift-4-current-year-mont-day
+//
 
 import UIKit
-
-
 
 class IcuDateHelper: NSObject {
     
@@ -18,6 +18,13 @@ class IcuDateHelper: NSObject {
         super.init()
     }
     
+    public func getYear() -> (Int) {
+        let date = Date()
+        let yearFormat = DateFormatter()
+        yearFormat.dateFormat = "yyyy"
+        let formattedYearDate = yearFormat.string(from: date)
+        return Int(formattedYearDate) ?? 0
+    }
     
     /// 返回月份和日期数据
     ///
@@ -57,4 +64,8 @@ class IcuDateHelper: NSObject {
         let formattedMinuteDate = minuteFormat.string(from: date)
         return (Int(formattedHourDate) ?? 0, Int(formattedMinuteDate) ?? 0)
     }
+    
+//    public func isHoliday() -> (Bool, String) {
+//
+//    }
 }

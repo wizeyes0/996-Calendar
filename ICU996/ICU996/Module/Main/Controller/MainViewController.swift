@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+    
+    public var viewModel: MainViewModel = MainViewModel()
 
     lazy var headerView: IcuHeaderView = {
         let view = IcuHeaderView()
@@ -37,6 +39,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         initialViews()
         initialLayouts()
+        initialDatas()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -80,10 +83,26 @@ class MainViewController: UIViewController {
         }
     }
     
+    private func initialDatas() {
+        calendarView.viewModel = viewModel.calendarViewModel
+    }
+    
     @objc func menuButtonClicked() {
         let feedbackVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUFeedbackViewController")
         present(feedbackVc, animated: true, completion: nil)
     }
 }
 
+class MainViewModel: NSObject {
+    private(set) var calendarViewModel: IcuCalendarViewModel = IcuCalendarViewModel()
+    
+    override init() {
+        super.init()
+        initialDatas()
+    }
+    
+    private func initialDatas() {
+        calendarViewModel.updateDatas()
+    }
+}
 
