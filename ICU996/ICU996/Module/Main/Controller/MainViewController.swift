@@ -40,10 +40,14 @@ class MainViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let hasSetSalary = UserDefaults.standard.bool(forKey: "HasSetSalary")
+        let hasSetSalary = UserDefaults.standard.bool(forKey: "hasSetSalary")
         if !hasSetSalary {
             let startVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUStartViewController")
             present(startVc, animated: true, completion: nil)
+        }
+        //重新设置用户名
+        if let name = UserDefaults.standard.string(forKey: "username") {
+            headerView.setWelcomLabelText(name)
         }
     }
     private func initialViews() {

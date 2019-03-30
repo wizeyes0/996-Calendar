@@ -32,7 +32,9 @@ class ICUStartViewController: UIViewController {
             return
         }
         //已设置过薪水
-        UserDefaults.standard.set(true, forKey: "HasSetSalary")
+        UserDefaults.standard.set(nameTextField.text, forKey: "username")
+        UserDefaults.standard.set(salaryTextField.text, forKey: "usersalary")
+        UserDefaults.standard.set(true, forKey: "hasSetSalary")
         close()
     }
 }
