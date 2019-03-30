@@ -25,6 +25,13 @@ class MainViewController: UIViewController {
         let view = IcuCalendarView()
         return view
     }()
+    
+    lazy var menuButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "menu"), for: .normal)
+        button.addTarget(self, action: #selector(self.menuButtonClicked), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +47,7 @@ class MainViewController: UIViewController {
         }
     }
     private func initialViews() {
+        headerView.addSubview(menuButton)
         view.addSubview(headerView)
         view.addSubview(tabView)
         view.addSubview(calendarView)
@@ -55,7 +63,11 @@ class MainViewController: UIViewController {
             make.left.right.equalToSuperview()
             make.height.equalTo(120)
         }
-        
+        menuButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.width.height.equalTo(36)
+        }
         tabView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom)
@@ -66,6 +78,11 @@ class MainViewController: UIViewController {
             make.top.equalTo(tabView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
+    }
+    
+    @objc func menuButtonClicked() {
+        let feedbackVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUFeedbackViewController")
+        present(feedbackVc, animated: true, completion: nil)
     }
 }
 
