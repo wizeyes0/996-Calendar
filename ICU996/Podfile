@@ -20,6 +20,7 @@ end
 def buz_component
   # 业务组件
   # pod ''
+  pod 'DLLocalNotifications'
 end
 
 def debug_component

@@ -61,10 +61,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="该自己匿个名字吧" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bv-k7-BLe">
-                                <rect key="frame" x="87" y="348" width="240" height="30"/>
+                                <rect key="frame" x="87" y="323" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="SJJ-Kp-qEI"/>
-                                    <constraint firstAttribute="height" constant="30" id="Yig-1Z-qNT"/>
+                                    <constraint firstAttribute="height" constant="40" id="Yig-1Z-qNT"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,13 +80,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1q1-kt-hjA">
-                                <rect key="frame" x="175" y="468" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1q1-kt-hjA">
+                                <rect key="frame" x="82" y="463" width="250" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="A3x-e8-CZd"/>
-                                    <constraint firstAttribute="width" constant="64" id="qJ5-Wj-dGd"/>
+                                    <constraint firstAttribute="height" constant="56" id="A3x-e8-CZd"/>
+                                    <constraint firstAttribute="width" constant="250" id="qJ5-Wj-dGd"/>
                                 </constraints>
-                                <state key="normal" title="Done-&gt;"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="0.39592493309999999" blue="0.52751020400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="done" destination="3bq-0Z-9SW" eventType="touchUpInside" id="eIU-dj-dKJ"/>
                                 </connections>
@@ -105,10 +107,10 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="同学，请真诚的输入您的月薪" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vh-E2-8aE">
-                                <rect key="frame" x="87" y="408" width="240" height="30"/>
+                                <rect key="frame" x="87" y="393" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="JUK-Nw-kS6"/>
-                                    <constraint firstAttribute="height" constant="30" id="MRs-2j-Fmw"/>
+                                    <constraint firstAttribute="height" constant="40" id="MRs-2j-Fmw"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,7 +128,7 @@
                             <constraint firstItem="1q1-kt-hjA" firstAttribute="centerX" secondItem="Awm-Q0-f6V" secondAttribute="centerX" id="WEo-o1-kCE"/>
                             <constraint firstItem="1q1-kt-hjA" firstAttribute="top" secondItem="3vh-E2-8aE" secondAttribute="bottom" constant="30" id="Yxp-1v-6aA"/>
                             <constraint firstItem="5bv-k7-BLe" firstAttribute="centerX" secondItem="Awm-Q0-f6V" secondAttribute="centerX" id="lSh-ig-Egr"/>
-                            <constraint firstItem="3vh-E2-8aE" firstAttribute="centerY" secondItem="Awm-Q0-f6V" secondAttribute="centerY" constant="-30" id="rkJ-0f-YWh"/>
+                            <constraint firstItem="3vh-E2-8aE" firstAttribute="centerY" secondItem="Awm-Q0-f6V" secondAttribute="centerY" constant="-40" id="rkJ-0f-YWh"/>
                             <constraint firstItem="3vh-E2-8aE" firstAttribute="centerX" secondItem="Awm-Q0-f6V" secondAttribute="centerX" id="ufK-0A-GV8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Awm-Q0-f6V"/>

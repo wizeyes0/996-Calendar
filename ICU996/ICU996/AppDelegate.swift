@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import DLLocalNotifications
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //请求通知权限
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound]) { (has, error) in
+            
+        }
+        
+        // 每天固定早上9点、晚上22：00发出通知
+        let dayNotification = DLNotification(identifier: "dayNotification", alertTitle: "今天996了吗？", alertBody: ICUSaying.Positive.a.rawValue, date: Date(timeIntervalSince1970: 1*60*60) , repeats: .daily)
+        
+        let nightNotification = DLNotification(identifier: "nightNotification", alertTitle: "今天996了吗？", alertBody: ICUSaying.Negative.e.rawValue, date: Date(timeIntervalSince1970: 14*60*60) , repeats: .daily)
+        
+        //添加到系统通知中
+        let scheduler = DLNotificationScheduler()
+        scheduler.scheduleNotification(notification: dayNotification)
+        scheduler.scheduleNotification(notification: nightNotification)
+        scheduler.scheduleAllNotifications()
+        
         return true
     }
 
