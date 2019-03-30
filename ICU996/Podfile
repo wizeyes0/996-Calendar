@@ -8,12 +8,13 @@ def basic_component
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'SDWebImage', '~> 4.4.6'
   pod 'SwiftyUserDefaults', '4.0.0-beta.2'
+  pod 'DeviceKit', '~> 1.3'
 end
 
 def ui_component
   # UI 组件
   pod 'pop', '~> 1.0.12'
-  pod 'AppCenter'
+#  pod 'AppCenter'
 end
 
 def buz_component
