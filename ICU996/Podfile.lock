@@ -10,7 +10,7 @@ PODS:
   - AZCategory/Gradient (0.0.2)
   - AZCategory/PushAndPop (0.0.2)
   - AZCategory/SafeArea (0.0.2)
-  - DeviceKit (1.12.0)
+  - DeviceKit (1.13.0)
   - DLLocalNotifications (0.07)
   - FLEX (2.4.0)
   - KVOController (1.2.0)
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   AZCategory: fbcb0ba6e1da3790cd3aefe13216b5adc25f6b56
-  DeviceKit: f5dbd2e70cafd420d6a09379b8800cdf5fe92ba5
+  DeviceKit: 5a4accdb2918ce0b69e62dc3bef6e4d2cc06e2e4
   DLLocalNotifications: 5d358a73284efab757b4a4c07f3e5987b8afcef5
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6

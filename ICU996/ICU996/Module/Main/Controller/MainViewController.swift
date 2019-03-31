@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
     lazy var menuButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "menu"), for: .normal)
-        button.addTarget(self, action: #selector(self.menuButtonClicked), for: .touchUpInside)
+        button.addTarget(self, action: #selector(menuButtonClicked), for: .touchUpInside)
         return button
     }()
     
@@ -123,8 +123,9 @@ class MainViewController: UIViewController {
     private func initialDatas() {}
     
     @objc func menuButtonClicked() {
-        let feedbackVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUFeedbackViewController")
-        present(feedbackVc, animated: true, completion: nil)
+        let feedbackVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "SettingViewController")
+        let nav = UINavigationController(rootViewController: feedbackVc)
+        present(nav, animated: true, completion: nil)
     }
 }
 
