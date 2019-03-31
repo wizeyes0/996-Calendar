@@ -41,14 +41,16 @@ class MainViewController: UIViewController {
         initialLayouts()
         initialDatas()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let hasSetSalary = UserDefaults.standard.bool(forKey: "HasSetSalary")
+        let hasSetSalary = IcuCacheManager.get.hasSetSalary
         if !hasSetSalary {
             let startVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUStartViewController")
             present(startVc, animated: true, completion: nil)
         }
     }
+    
     private func initialViews() {
         headerView.addSubview(menuButton)
         view.addSubview(headerView)

@@ -65,7 +65,23 @@ class IcuDateHelper: NSObject {
         return (Int(formattedHourDate) ?? 0, Int(formattedMinuteDate) ?? 0)
     }
     
-//    public func isHoliday() -> (Bool, String) {
-//
-//    }
+    public func isHoliday() -> (Bool, String) {
+        let year = getYear()
+        let dateFormat = DateFormatter()
+        let date = Date()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        let formattedDate = dateFormat.string(from: date)
+        guard let plistPath = Bundle.main.path(forResource: "data_\(year)", ofType: "plist") else {
+            return (false, "")
+        }
+        if let dic = NSMutableDictionary(contentsOfFile: plistPath) as? Dictionary<String, AnyObject> {
+            if let infoDic = dic[formattedDate] as? Dictionary<String, AnyObject> {
+                if let isWork: Bool = infoDic["should_work"] as? Bool,
+                    let info: String = infoDic["info"] as? String {
+                    return (isWork, info)
+                }
+            }
+        }
+        return (false, "")
+    }
 }

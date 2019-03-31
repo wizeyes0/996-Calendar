@@ -29,6 +29,7 @@
 		84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CD224C92DF0088F501 /* UIViewController+.swift */; };
 		84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D0224C93490088F501 /* UIFont+996.swift */; };
 		84C7C9D4224C93820088F501 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D3224C93820088F501 /* SettingViewController.swift */; };
+		84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D722504CEF0088F501 /* UIView+gradient.swift */; };
 		84D624B1224C833E007E397D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D624B0224C833E007E397D /* AppDelegate.swift */; };
 		84D624B6224C833E007E397D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B4224C833E007E397D /* Main.storyboard */; };
 		84D624B8224C8340007E397D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B7224C8340007E397D /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		84C7C9CD224C92DF0088F501 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		84C7C9D0224C93490088F501 /* UIFont+996.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+996.swift"; sourceTree = "<group>"; };
 		84C7C9D3224C93820088F501 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		84C7C9D722504CEF0088F501 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		84D624AD224C833E007E397D /* ICU996.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICU996.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D624B0224C833E007E397D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D624B5224C833E007E397D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				84C7C9CB224C91040088F501 /* UIColor+.swift */,
 				84C7C9CD224C92DF0088F501 /* UIViewController+.swift */,
 				518DEAFD224F1F7800D18869 /* UIDevice+.swift */,
+				84C7C9D722504CEF0088F501 /* UIView+gradient.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AZCategory/AZCategory.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/DLLocalNotifications/DLLocalNotifications.framework",
@@ -494,6 +498,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZCategory.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLLocalNotifications.framework",
@@ -567,6 +572,7 @@
 				84D624B1224C833E007E397D /* AppDelegate.swift in Sources */,
 				84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */,
 				8493C8B6224E63F800D28C22 /* IcuTabView.swift in Sources */,
+				84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
