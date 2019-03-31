@@ -27,13 +27,14 @@ class SettingViewController: UIViewController {
                 ["title": "Sepicat","icon":"Sepicat","desc":"最棒github客户端","appId":""],
                 ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":""],
                 ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":""],
+                ["title": "Pugword","icon":"pugword","desc":"超高颜值的密码保险箱","appId":""],
                 ["title": "寻色","icon":"logo","desc":"为你寻找最美配色","appId":""]
             ]
         ]
     }()
     
     private lazy var headerTitle: Array = {
-        return ["功能","关于","我们的作品"]
+        return ["功能","关于","独立开发者的作品With❤️"]
     }()
     
     // 懒加载TableView
@@ -108,7 +109,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         let view = UIView()
         view.backgroundColor = UIColor.lightText
         let headerLabel = UILabel()
-        headerLabel.frame = CGRect(x: 20, y: 20, width: 100, height: 20)
+        headerLabel.frame = CGRect(x: 20, y: 20, width: 200, height: 20)
         headerLabel.text = headerTitle[section]
         headerLabel.textColor = UIColor.lightGray
         headerLabel.font = UIFont.icuFont(.regular, size: 13)
@@ -123,6 +124,8 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let sectionArray = dataSource[indexPath.section]
         let dict: [String: String] = sectionArray[indexPath.row]
         
