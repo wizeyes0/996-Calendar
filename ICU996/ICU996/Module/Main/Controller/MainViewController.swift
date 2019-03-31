@@ -8,10 +8,31 @@
 
 import UIKit
 import SnapKit
+import KVOController
 
 class MainViewController: UIViewController {
     
     public var viewModel: MainViewModel = MainViewModel()
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10
+        layout.itemSize = CGSize(width: self.view.frame.width,
+                                 height: self.view.frame.height - 254)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isPagingEnabled = true
+        collectionView.backgroundColor = .clear
+        collectionView.alwaysBounceHorizontal = true
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        collectionView.register(MainCalendarViewCell.self, forCellWithReuseIdentifier: "MainCalendarViewCell")
+        return collectionView
+    }()
 
     lazy var headerView: IcuHeaderView = {
         let view = IcuHeaderView()
@@ -22,12 +43,7 @@ class MainViewController: UIViewController {
         let view = IcuTabView()
         return view
     }()
-    
-    lazy var calendarView: IcuCalendarView = {
-        let view = IcuCalendarView()
-        return view
-    }()
-    
+
     lazy var menuButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "menu"), for: .normal)
@@ -56,11 +72,25 @@ class MainViewController: UIViewController {
     }
     
     private func initialViews() {
+        
+        tabView.changedCallBack = { [weak self] type in
+            guard let self = self else { return }
+            if type == .calendar {
+                self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                                 at: .left,
+                                                 animated: true)
+            }
+            else if type == .hourSalary {
+                self.collectionView.scrollToItem(at: IndexPath(row: 1, section: 0),
+                                                 at: .left,
+                                                 animated: true)
+            }
+        }
+        
         headerView.addSubview(menuButton)
         view.addSubview(headerView)
         view.addSubview(tabView)
-        view.addSubview(calendarView)
-        
+        view.addSubview(collectionView)
     }
     
     private func initialLayouts() {
@@ -84,15 +114,13 @@ class MainViewController: UIViewController {
             make.height.equalTo(44)
         }
         
-        calendarView.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(tabView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
     }
     
-    private func initialDatas() {
-        calendarView.viewModel = viewModel.calendarViewModel
-    }
+    private func initialDatas() {}
     
     @objc func menuButtonClicked() {
         let feedbackVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUFeedbackViewController")
@@ -100,16 +128,41 @@ class MainViewController: UIViewController {
     }
 }
 
-class MainViewModel: NSObject {
-    private(set) var calendarViewModel: IcuCalendarViewModel = IcuCalendarViewModel()
+// MARK: - UICollectionViewDelegate
+extension MainViewController: UICollectionViewDelegate {}
+
+// MARK: - UICollectionViewDataSource
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.cellModels.count
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let vm = viewModel.cellModels[indexPath.row] as? MainCalendarViewCellModel {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarViewCell", for: indexPath)
+                as? MainCalendarViewCell {
+                cell.viewModel = vm
+                return cell
+            }
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+        cell.backgroundColor = .yellow
+        return cell
+    }
+}
+
+class MainViewModel: NSObject {
+    private(set) var cellModels: [AnyObject] = []
+
     override init() {
         super.init()
         initialDatas()
     }
     
     private func initialDatas() {
-        calendarViewModel.updateDatas()
+        cellModels.append(MainCalendarViewCellModel(calendarModel: IcuCalendarViewModel()))
+        cellModels.append(MainCalendarViewCellModel(calendarModel: IcuCalendarViewModel()))
     }
 }
 
