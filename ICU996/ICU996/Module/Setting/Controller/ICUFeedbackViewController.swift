@@ -16,8 +16,11 @@ class ICUFeedbackViewController: UIViewController  {
     
     let appBuild = UIDevice.current.appBuild
     
-    lazy var appVersionBuild = "Version:\(appVersion)(\(appBuild))"
-    
+    var appVersionBuild:String{
+        get {
+            return "Version:\(appVersion)(\(appBuild))"
+        }
+    }
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var feedbackButton: UIButton!

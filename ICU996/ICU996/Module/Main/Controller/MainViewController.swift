@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
 
     lazy var menuButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "menu"), for: .normal)
+        button.setImage(UIImage(named: "navMenu"), for: .normal)
         button.addTarget(self, action: #selector(menuButtonClicked), for: .touchUpInside)
         return button
     }()

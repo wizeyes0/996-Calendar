@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1E39E1D9224E5EE500BA4EFA /* ICUStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39E1D8224E5EE500BA4EFA /* ICUStartViewController.swift */; };
 		1E39E1DB224E67E300BA4EFA /* ICUSaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39E1DA224E67E300BA4EFA /* ICUSaying.swift */; };
+		1EAD68942250FECD004A16BD /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD68932250FECD004A16BD /* PrivacyViewController.swift */; };
+		1EAD689722510517004A16BD /* OurAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD689522510517004A16BD /* OurAppCell.swift */; };
+		1EAD689822510517004A16BD /* OurAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD689622510517004A16BD /* OurAppCell.xib */; };
 		449E9529D3C61B8D8DE6254B /* Pods_ICU996.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB744606DA04C0D8969A71D4 /* Pods_ICU996.framework */; };
 		514C8EC82250A28D00C52DB7 /* UIButton+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */; };
 		514C8ECA2250A36900C52DB7 /* UIButton+factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8EC92250A36900C52DB7 /* UIButton+factory.swift */; };
@@ -54,6 +57,9 @@
 /* Begin PBXFileReference section */
 		1E39E1D8224E5EE500BA4EFA /* ICUStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICUStartViewController.swift; sourceTree = "<group>"; };
 		1E39E1DA224E67E300BA4EFA /* ICUSaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICUSaying.swift; sourceTree = "<group>"; };
+		1EAD68932250FECD004A16BD /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		1EAD689522510517004A16BD /* OurAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurAppCell.swift; sourceTree = "<group>"; };
+		1EAD689622510517004A16BD /* OurAppCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OurAppCell.xib; sourceTree = "<group>"; };
 		1ECB6F38224FBB5900DED811 /* ICU996.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICU996.entitlements; sourceTree = "<group>"; };
 		386FB4DD9B66CADCEE971A70 /* Pods_ICU996Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU996Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A55BB2643321A312551C958 /* Pods-ICU996Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,15 @@
 				1E39E1DA224E67E300BA4EFA /* ICUSaying.swift */,
 			);
 			path = Saying;
+			sourceTree = "<group>";
+		};
+		1EAD68992251051E004A16BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EAD689522510517004A16BD /* OurAppCell.swift */,
+				1EAD689622510517004A16BD /* OurAppCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		39B135D8B9B81A51E107D5DE /* Pods */ = {
@@ -274,6 +289,7 @@
 		84C7C9D2224C93700088F501 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				1EAD68992251051E004A16BD /* View */,
 				84C7C9D5224C93860088F501 /* Controller */,
 			);
 			path = Setting;
@@ -283,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				84C7C9D3224C93820088F501 /* SettingViewController.swift */,
+				1EAD68932250FECD004A16BD /* PrivacyViewController.swift */,
 				518DEAF9224F178100D18869 /* ICUFeedbackViewController.swift */,
 			);
 			path = Controller;
@@ -457,6 +474,7 @@
 				84D624B8224C8340007E397D /* Assets.xcassets in Resources */,
 				8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */,
 				84D624B6224C833E007E397D /* Main.storyboard in Resources */,
+				1EAD689822510517004A16BD /* OurAppCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +618,9 @@
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
 				84C7C9DA225057D80088F501 /* CALayer+.swift in Sources */,
+				1EAD68942250FECD004A16BD /* PrivacyViewController.swift in Sources */,
 				84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */,
+				1EAD689722510517004A16BD /* OurAppCell.swift in Sources */,
 				8493C8B3224E5A9000D28C22 /* IcuHeaderViewModel.swift in Sources */,
 				8493C8C5224FB57000D28C22 /* IcuCalendarViewModel.swift in Sources */,
 				8493C8BC224E6DD200D28C22 /* IcuDateHelper.swift in Sources */,
