@@ -28,7 +28,7 @@
         <!--Setting View Controller-->
         <scene sceneID="DvX-nU-R6R">
             <objects>
-                <viewController id="VEy-HC-aSd" customClass="SettingViewController" customModule="ICU996" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingViewController" id="VEy-HC-aSd" customClass="SettingViewController" customModule="ICU996" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="694-zq-Vog">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

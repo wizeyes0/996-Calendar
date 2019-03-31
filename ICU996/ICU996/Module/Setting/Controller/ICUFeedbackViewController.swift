@@ -33,17 +33,16 @@ class ICUFeedbackViewController: UIViewController  {
     @IBAction func closeButtonClickedAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func feedbackButtonClickedAction(_ sender: Any) {
         self.sendMailInApp()
     }
     
-
     @IBAction func rateUSButtonClickedAction(_ sender: Any) {
         let appID = "xxxxx"
         let urlString = "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review";//替换为对应的APPID
         let url = URL(string: urlString)!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-
     }
     
     func sendMailInApp()
@@ -67,8 +66,8 @@ class ICUFeedbackViewController: UIViewController  {
         mailComposeVC.setMessageBody(self.messageBody(), isHTML: false)
         
         return mailComposeVC
-    
     }
+    
     func messageBody() -> String {
         let systemVersion = UIDevice.current.systemVersion
         let deviceModel = Device()
