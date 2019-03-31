@@ -30,6 +30,7 @@
 		84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D0224C93490088F501 /* UIFont+996.swift */; };
 		84C7C9D4224C93820088F501 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D3224C93820088F501 /* SettingViewController.swift */; };
 		84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D722504CEF0088F501 /* UIView+gradient.swift */; };
+		84C7C9DA225057D80088F501 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D9225057D80088F501 /* CALayer+.swift */; };
 		84D624B1224C833E007E397D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D624B0224C833E007E397D /* AppDelegate.swift */; };
 		84D624B6224C833E007E397D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B4224C833E007E397D /* Main.storyboard */; };
 		84D624B8224C8340007E397D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B7224C8340007E397D /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		84C7C9D0224C93490088F501 /* UIFont+996.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+996.swift"; sourceTree = "<group>"; };
 		84C7C9D3224C93820088F501 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		84C7C9D722504CEF0088F501 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
+		84C7C9D9225057D80088F501 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		84D624AD224C833E007E397D /* ICU996.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICU996.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D624B0224C833E007E397D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D624B5224C833E007E397D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				84C7C9CD224C92DF0088F501 /* UIViewController+.swift */,
 				518DEAFD224F1F7800D18869 /* UIDevice+.swift */,
 				84C7C9D722504CEF0088F501 /* UIView+gradient.swift */,
+				84C7C9D9225057D80088F501 /* CALayer+.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
+				84C7C9DA225057D80088F501 /* CALayer+.swift in Sources */,
 				84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */,
 				8493C8B3224E5A9000D28C22 /* IcuHeaderViewModel.swift in Sources */,
 				8493C8C5224FB57000D28C22 /* IcuCalendarViewModel.swift in Sources */,

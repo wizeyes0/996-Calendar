@@ -73,6 +73,24 @@ class IcuCalendarView: UIView {
         return label
     }()
     
+    lazy var offWorkButton: UIButton = {
+        let button = UIButton()
+        button.setGradientColor(colors: UIColor(rgb: 0xE95A7D), UIColor(rgb: 0xFDAD9F), locations: [0, 1])
+        button.setTitle("还不下班吗？", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.icuFont(.medium, size: 15)
+        button.layer.masksToBounds = false
+        button.layer.cornerRadius = 20
+        let shadowColor = UIColor(red: 121, green: 121, blue: 121)
+        button.layer.applySketchShadow(color: shadowColor,
+                                       alpha: 0.5,
+                                       x: 0,
+                                       y: 4,
+                                       blur: 20,
+                                       spread: 0)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         self.viewModel = IcuCalendarViewModel()
         super.init(frame: frame)
@@ -92,6 +110,7 @@ class IcuCalendarView: UIView {
         bakView.addSubview(answerLabel)
         bakView.addSubview(downAnswerLabel)
         bakView.addSubview(quoteLabel)
+        bakView.addSubview(offWorkButton)
     }
     
     private func updateViews() {
@@ -137,6 +156,13 @@ class IcuCalendarView: UIView {
             make.centerX.equalTo(downAnswerLabel)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
+        }
+        
+        offWorkButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-83)
+            make.height.equalTo(40)
+            make.width.equalTo(200)
+            make.centerX.equalToSuperview()
         }
     }
 }

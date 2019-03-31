@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(self.menuButtonClicked), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialViews()
@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
         view.addSubview(headerView)
         view.addSubview(tabView)
         view.addSubview(calendarView)
+        
     }
     
     private func initialLayouts() {

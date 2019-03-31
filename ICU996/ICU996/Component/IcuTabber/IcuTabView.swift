@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import pop
 
 class IcuTabView: UIView {
+    
+    enum SubType: Int {
+        case calendar = 1
+        case hourSalary = 2
+    }
     
     private var bakView: UIView = {
         let view = UIView()
@@ -16,6 +22,8 @@ class IcuTabView: UIView {
         return view
     }()
     
+    private(set) var currentTab: SubType = .calendar
+
     lazy private var calendarButton: UIButton = {
         let button = UIButton()
         button.setTitle("日历", for: .normal)
@@ -35,9 +43,8 @@ class IcuTabView: UIView {
     lazy private var lightLineView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(rgb: 0xe95a7d)
-        view.alpha = 0.6
-        view.layer.masksToBounds = true
         view.layer.cornerRadius = 5
+        view.setGradientColor(colors: UIColor(rgb: 0xE95A7D), UIColor(rgb: 0xFDAD9F), locations: [0, 1])
         return view
     }()
     
@@ -53,9 +60,9 @@ class IcuTabView: UIView {
     
     private func initialViews() {
         addSubview(bakView)
+        bakView.addSubview(lightLineView)
         bakView.addSubview(calendarButton)
         bakView.addSubview(hourSalaryButton)
-        bakView.addSubview(lightLineView)
     }
     
     private func initialLayouts() {
@@ -71,6 +78,13 @@ class IcuTabView: UIView {
         hourSalaryButton.snp.makeConstraints { make in
             make.left.equalTo(calendarButton.snp.right).offset(24)
             make.centerY.equalToSuperview()
+        }
+        
+        lightLineView.snp.makeConstraints { make in
+            make.height.equalTo(10)
+            make.width.equalTo(50)
+            make.leading.equalTo(calendarButton).offset(4)
+            make.top.equalTo(calendarButton.snp.centerY).offset(4)
         }
     }
 }
