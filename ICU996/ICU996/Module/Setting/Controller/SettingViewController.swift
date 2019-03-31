@@ -19,7 +19,7 @@ class SettingViewController: UIViewController {
             ],
             [
                 ["title": "隐私条例","icon":"privacy"],
-                ["title": "推荐996日历","icon":"share"],
+                ["title": "分享996日历","icon":"share"],
 //                ["title": "意见反馈","icon":"feedback"],
                 ["title": "关于我们","icon":"aboutus"]
             ],

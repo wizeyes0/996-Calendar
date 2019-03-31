@@ -225,6 +225,9 @@
                                         <state key="normal" title="@ Oniityann">
                                             <color key="titleColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="mbv-np-s3E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eie-vS-Yac">
                                         <rect key="frame" x="20" y="130" width="49" height="30"/>
@@ -232,6 +235,9 @@
                                         <state key="normal" title="@ 冬瓜">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="vam-hf-HAf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOO-IT-AsU">
                                         <rect key="frame" x="20" y="200" width="49" height="30"/>
@@ -239,13 +245,19 @@
                                         <state key="normal" title="@ 油条">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="VaD-lu-P9e"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvF-b4-JkP">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvF-b4-JkP">
                                         <rect key="frame" x="20" y="228" width="108" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="@ Beatbox_Gao">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="Jeo-Aq-hQl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVh-1t-8KO">
                                         <rect key="frame" x="77" y="200" width="49" height="30"/>
@@ -253,6 +265,9 @@
                                         <state key="normal" title="@ 振华">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="8aK-2T-Zsx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnv-t6-nWE">
                                         <rect key="frame" x="134" y="200" width="49" height="30"/>
@@ -260,6 +275,9 @@
                                         <state key="normal" title="@ 世杰">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="KrG-j2-BJB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehc-D1-i3d">
                                         <rect key="frame" x="77" y="130" width="49" height="30"/>
@@ -267,6 +285,9 @@
                                         <state key="normal" title="@ 寒流">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="Q8Y-x4-WZ8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hp-m8-4Be">
                                         <rect key="frame" x="134" y="130" width="33" height="30"/>
@@ -274,13 +295,19 @@
                                         <state key="normal" title="@ 霖">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="vaf-hY-ih3"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgA-vj-e8u">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgA-vj-e8u">
                                         <rect key="frame" x="134" y="228" width="181" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="@ A.Lc&amp;XQMPnbQdPg3t#">
                                             <color key="titleColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openWeibo:" destination="CwO-Uz-jaQ" eventType="touchUpInside" id="vv6-f5-PvW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

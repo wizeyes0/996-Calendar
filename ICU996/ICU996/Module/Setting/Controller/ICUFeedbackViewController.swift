@@ -21,6 +21,18 @@ class ICUFeedbackViewController: UIViewController  {
             return "Version:\(appVersion)(\(appBuild))"
         }
     }
+    private lazy var weibos: Array = {
+        return ["2642643770",//-一楠
+                "desgard",//冬瓜
+                "1619592223",//-寒流
+                "1619592223",//-霖
+                "2158505911",//-油条
+                "1619592223",//-振华
+                "1619592223",//-世杰
+                "1619592223",//-高惠宇
+                "234399610",//A.xxx
+        ]
+    }()
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var feedbackButton: UIButton!
@@ -58,9 +70,26 @@ class ICUFeedbackViewController: UIViewController  {
             self.showSendMailErrorAlert()
         }
     }
+
+    @IBAction func openWeibo(_ sender:UIButton!) {
+        
+        var weiboId = "1619592223"
+        weiboId = weibos[sender.tag]
+        
+        let url = URL(string: "https://weibo.com/\(weiboId)?is_all=1")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!, options: [UIApplication.OpenExternalURLOptionsKey.universalLinksOnly:"996"]) { success in
+                print(success)
+            }
+        }
+    }
+}
+
+extension ICUFeedbackViewController {
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
-    
+        
         let mailComposeVC = MFMailComposeViewController()
         
         mailComposeVC.mailComposeDelegate = self
@@ -84,7 +113,6 @@ class ICUFeedbackViewController: UIViewController  {
         self.present(sendMailErrorAlert, animated: true){}
         
     }
-
 }
 
 extension ICUFeedbackViewController: MFMailComposeViewControllerDelegate {
