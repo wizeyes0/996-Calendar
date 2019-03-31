@@ -3,6 +3,13 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - AZCategory (0.0.2):
+    - AZCategory/Gradient (= 0.0.2)
+    - AZCategory/PushAndPop (= 0.0.2)
+    - AZCategory/SafeArea (= 0.0.2)
+  - AZCategory/Gradient (0.0.2)
+  - AZCategory/PushAndPop (0.0.2)
+  - AZCategory/SafeArea (0.0.2)
   - DeviceKit (1.12.0)
   - DLLocalNotifications (0.07)
   - FLEX (2.4.0)
@@ -19,6 +26,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - AlamofireObjectMapper (~> 5.0)
+  - AZCategory
   - DeviceKit (~> 1.3)
   - DLLocalNotifications
   - FLEX (~> 2.0)
@@ -33,6 +41,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - AZCategory
     - DeviceKit
     - DLLocalNotifications
     - FLEX
@@ -50,6 +59,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  AZCategory: fbcb0ba6e1da3790cd3aefe13216b5adc25f6b56
   DeviceKit: f5dbd2e70cafd420d6a09379b8800cdf5fe92ba5
   DLLocalNotifications: 5d358a73284efab757b4a4c07f3e5987b8afcef5
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
@@ -61,6 +71,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyUserDefaults: 39ec70433f22f3052a64bc5fbfb34f46932b8bf1
 
-PODFILE CHECKSUM: 52175dc69a312b7f54c541160712b7613f436f64
+PODFILE CHECKSUM: d3ab0dfd12ae5c6e78ed2638742e995d92ca671c
 
 COCOAPODS: 1.6.1

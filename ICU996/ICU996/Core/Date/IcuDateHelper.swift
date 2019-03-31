@@ -5,10 +5,10 @@
 //  Created by Harry Twan on 2019/3/29.
 //  Copyright © 2019 Harry Duan. All rights reserved.
 //
+//  https://coderwall.com/p/b8pz5q/swift-4-current-year-mont-day
+//
 
 import UIKit
-
-
 
 class IcuDateHelper: NSObject {
     
@@ -18,6 +18,13 @@ class IcuDateHelper: NSObject {
         super.init()
     }
     
+    public func getYear() -> (Int) {
+        let date = Date()
+        let yearFormat = DateFormatter()
+        yearFormat.dateFormat = "yyyy"
+        let formattedYearDate = yearFormat.string(from: date)
+        return Int(formattedYearDate) ?? 0
+    }
     
     /// 返回月份和日期数据
     ///
@@ -56,5 +63,25 @@ class IcuDateHelper: NSObject {
         let formattedHourDate = hourFormat.string(from: date)
         let formattedMinuteDate = minuteFormat.string(from: date)
         return (Int(formattedHourDate) ?? 0, Int(formattedMinuteDate) ?? 0)
+    }
+    
+    public func isHoliday() -> (Bool, String) {
+        let year = getYear()
+        let dateFormat = DateFormatter()
+        let date = Date()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        let formattedDate = dateFormat.string(from: date)
+        guard let plistPath = Bundle.main.path(forResource: "data_\(year)", ofType: "plist") else {
+            return (false, "")
+        }
+        if let dic = NSMutableDictionary(contentsOfFile: plistPath) as? Dictionary<String, AnyObject> {
+            if let infoDic = dic[formattedDate] as? Dictionary<String, AnyObject> {
+                if let isWork: Bool = infoDic["should_work"] as? Bool,
+                    let info: String = infoDic["info"] as? String {
+                    return (isWork, info)
+                }
+            }
+        }
+        return (false, "")
     }
 }

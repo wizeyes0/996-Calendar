@@ -9,6 +9,12 @@
 import UIKit
 
 class IcuCalendarView: UIView {
+    
+    public var viewModel: IcuCalendarViewModel {
+        didSet {
+            updateViews()
+        }
+    }
 
     private var bakView: UIView = {
         let view = UIView()
@@ -68,6 +74,7 @@ class IcuCalendarView: UIView {
     }()
     
     override init(frame: CGRect) {
+        self.viewModel = IcuCalendarViewModel()
         super.init(frame: frame)
         initialViews()
         initialLayouts()
@@ -85,6 +92,13 @@ class IcuCalendarView: UIView {
         bakView.addSubview(answerLabel)
         bakView.addSubview(downAnswerLabel)
         bakView.addSubview(quoteLabel)
+    }
+    
+    private func updateViews() {
+        dateLabel.text = viewModel.dateText
+        weekdayLabel.text = viewModel.weekdayText
+        answerLabel.text = viewModel.doText
+        downAnswerLabel.text = viewModel.reasonText
     }
     
     private func initialLayouts() {

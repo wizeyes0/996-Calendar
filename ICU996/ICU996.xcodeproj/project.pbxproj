@@ -22,11 +22,14 @@
 		8493C8BC224E6DD200D28C22 /* IcuDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8BB224E6DD200D28C22 /* IcuDateHelper.swift */; };
 		8493C8C0224E6ED500D28C22 /* IcuCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8BF224E6ED500D28C22 /* IcuCacheManager.swift */; };
 		8493C8C2224F847600D28C22 /* IcuDateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8C1224F847600D28C22 /* IcuDateTest.swift */; };
+		8493C8C5224FB57000D28C22 /* IcuCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8C4224FB57000D28C22 /* IcuCalendarViewModel.swift */; };
+		8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8493C8C8224FCF3F00D28C22 /* data_2019.plist */; };
 		84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9C9224C90AA0088F501 /* MainViewController.swift */; };
 		84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CB224C91040088F501 /* UIColor+.swift */; };
 		84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9CD224C92DF0088F501 /* UIViewController+.swift */; };
 		84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D0224C93490088F501 /* UIFont+996.swift */; };
 		84C7C9D4224C93820088F501 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D3224C93820088F501 /* SettingViewController.swift */; };
+		84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9D722504CEF0088F501 /* UIView+gradient.swift */; };
 		84D624B1224C833E007E397D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D624B0224C833E007E397D /* AppDelegate.swift */; };
 		84D624B6224C833E007E397D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B4224C833E007E397D /* Main.storyboard */; };
 		84D624B8224C8340007E397D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B7224C8340007E397D /* Assets.xcassets */; };
@@ -63,11 +66,14 @@
 		8493C8BB224E6DD200D28C22 /* IcuDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuDateHelper.swift; sourceTree = "<group>"; };
 		8493C8BF224E6ED500D28C22 /* IcuCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCacheManager.swift; sourceTree = "<group>"; };
 		8493C8C1224F847600D28C22 /* IcuDateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuDateTest.swift; sourceTree = "<group>"; };
+		8493C8C4224FB57000D28C22 /* IcuCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCalendarViewModel.swift; sourceTree = "<group>"; };
+		8493C8C8224FCF3F00D28C22 /* data_2019.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = data_2019.plist; sourceTree = "<group>"; };
 		84C7C9C9224C90AA0088F501 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84C7C9CB224C91040088F501 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		84C7C9CD224C92DF0088F501 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		84C7C9D0224C93490088F501 /* UIFont+996.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+996.swift"; sourceTree = "<group>"; };
 		84C7C9D3224C93820088F501 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		84C7C9D722504CEF0088F501 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		84D624AD224C833E007E397D /* ICU996.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICU996.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D624B0224C833E007E397D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D624B5224C833E007E397D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				8493C8B8224E66A900D28C22 /* IcuCalendarView.swift */,
+				8493C8C4224FB57000D28C22 /* IcuCalendarViewModel.swift */,
 			);
 			path = IcuCalendar;
 			sourceTree = "<group>";
@@ -197,6 +204,22 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		8493C8C6224FCEFE00D28C22 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8C7224FCF0E00D28C22 /* Work */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8493C8C7224FCF0E00D28C22 /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				8493C8C8224FCF3F00D28C22 /* data_2019.plist */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
 		84C7C9C6224C891E0088F501 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +237,7 @@
 				84C7C9CB224C91040088F501 /* UIColor+.swift */,
 				84C7C9CD224C92DF0088F501 /* UIViewController+.swift */,
 				518DEAFD224F1F7800D18869 /* UIDevice+.swift */,
+				84C7C9D722504CEF0088F501 /* UIView+gradient.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -284,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				1ECB6F38224FBB5900DED811 /* ICU996.entitlements */,
+				8493C8C6224FCEFE00D28C22 /* Data */,
 				8493C8BA224E6CA700D28C22 /* Core */,
 				8493C8A8224E53CE00D28C22 /* Component */,
 				84C7C9CF224C93370088F501 /* Style */,
@@ -410,6 +435,7 @@
 			files = (
 				84D624BB224C8340007E397D /* LaunchScreen.storyboard in Resources */,
 				84D624B8224C8340007E397D /* Assets.xcassets in Resources */,
+				8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */,
 				84D624B6224C833E007E397D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +481,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AZCategory/AZCategory.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/DLLocalNotifications/DLLocalNotifications.framework",
@@ -471,6 +498,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZCategory.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLLocalNotifications.framework",
@@ -544,11 +572,13 @@
 				84D624B1224C833E007E397D /* AppDelegate.swift in Sources */,
 				84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */,
 				8493C8B6224E63F800D28C22 /* IcuTabView.swift in Sources */,
+				84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
 				84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */,
 				8493C8B3224E5A9000D28C22 /* IcuHeaderViewModel.swift in Sources */,
+				8493C8C5224FB57000D28C22 /* IcuCalendarViewModel.swift in Sources */,
 				8493C8BC224E6DD200D28C22 /* IcuDateHelper.swift in Sources */,
 				518DEAFA224F178100D18869 /* ICUFeedbackViewController.swift in Sources */,
 				84C7C9CC224C91040088F501 /* UIColor+.swift in Sources */,

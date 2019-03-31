@@ -14,13 +14,13 @@ end
 def ui_component
   # UI 组件
   pod 'pop', '~> 1.0.12'
-#  pod 'AppCenter'
+  pod 'AZCategory'
 end
 
 def buz_component
   # 业务组件
-  # pod ''
   pod 'DLLocalNotifications'
+#  pod 'AppCenter'
 end
 
 def debug_component

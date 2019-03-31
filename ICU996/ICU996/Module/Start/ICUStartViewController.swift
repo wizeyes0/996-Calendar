@@ -23,7 +23,7 @@ class ICUStartViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-   @IBAction  func done() {
+    @IBAction func done() {
         guard !(salaryTextField.text?.isEmpty)! else {
             let alertVc = UIAlertController(title: "不填薪水有什么意思...", message: "不填薪水有什么意思...", preferredStyle: .alert)
             alertVc.addAction(UIAlertAction(title: "好的好的", style: .default, handler: nil))
@@ -31,10 +31,10 @@ class ICUStartViewController: UIViewController {
 
             return
         }
-        //已设置过薪水
-        UserDefaults.standard.set(nameTextField.text, forKey: "username")
-        UserDefaults.standard.set(salaryTextField.text, forKey: "usersalary")
-        UserDefaults.standard.set(true, forKey: "hasSetSalary")
+        // 已设置过薪水
+        IcuCacheManager.get.userName = nameTextField.text
+        IcuCacheManager.get.usersalary = Int(salaryTextField.text ?? "0")
+        IcuCacheManager.get.hasSetSalary = true
         close()
     }
 }

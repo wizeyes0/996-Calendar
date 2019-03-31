@@ -42,4 +42,16 @@ class IcuDateTest: XCTestCase {
         expect(minute).to(beGreaterThan(-1), description: "分钟有误")
         expect(minute).to(beLessThan(60), description: "分钟有误")
     }
+    
+    /// 计算是否是工作日
+    func testShouldWork() {
+        let res: (Bool, String) = IcuDateHelper.shared.isHoliday()
+        let shouldWork = res.0
+        let info = res.1
+        if shouldWork {
+            expect(info).to(equal("工作日"), description: "是否工作计算错误")
+        } else {
+            expect(info).notTo(equal("工作日"), description: "是否工作计算错误")
+        }
+    }
 }
