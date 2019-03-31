@@ -74,20 +74,8 @@ class IcuCalendarView: UIView {
     }()
     
     lazy var offWorkButton: UIButton = {
-        let button = UIButton()
-        button.setGradientColor(colors: UIColor(rgb: 0xE95A7D), UIColor(rgb: 0xFDAD9F), locations: [0, 1])
+        let button = UIButton.defaultGradient()
         button.setTitle("还不下班吗？", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.icuFont(.medium, size: 15)
-        button.layer.masksToBounds = false
-        button.layer.cornerRadius = 20
-        let shadowColor = UIColor(red: 121, green: 121, blue: 121)
-        button.layer.applySketchShadow(color: shadowColor,
-                                       alpha: 0.5,
-                                       x: 0,
-                                       y: 4,
-                                       blur: 20,
-                                       spread: 0)
         return button
     }()
     

@@ -10,6 +10,8 @@
 		1E39E1D9224E5EE500BA4EFA /* ICUStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39E1D8224E5EE500BA4EFA /* ICUStartViewController.swift */; };
 		1E39E1DB224E67E300BA4EFA /* ICUSaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39E1DA224E67E300BA4EFA /* ICUSaying.swift */; };
 		449E9529D3C61B8D8DE6254B /* Pods_ICU996.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB744606DA04C0D8969A71D4 /* Pods_ICU996.framework */; };
+		514C8EC82250A28D00C52DB7 /* UIButton+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */; };
+		514C8ECA2250A36900C52DB7 /* UIButton+factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8EC92250A36900C52DB7 /* UIButton+factory.swift */; };
 		518DEAFA224F178100D18869 /* ICUFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DEAF9224F178100D18869 /* ICUFeedbackViewController.swift */; };
 		518DEAFC224F1B7F00D18869 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518DEAFB224F1B7F00D18869 /* MessageUI.framework */; };
 		518DEAFE224F1F7800D18869 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DEAFD224F1F7800D18869 /* UIDevice+.swift */; };
@@ -55,6 +57,8 @@
 		1ECB6F38224FBB5900DED811 /* ICU996.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICU996.entitlements; sourceTree = "<group>"; };
 		386FB4DD9B66CADCEE971A70 /* Pods_ICU996Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU996Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A55BB2643321A312551C958 /* Pods-ICU996Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+gradient.swift"; sourceTree = "<group>"; };
+		514C8EC92250A36900C52DB7 /* UIButton+factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+factory.swift"; sourceTree = "<group>"; };
 		518DEAF9224F178100D18869 /* ICUFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICUFeedbackViewController.swift; sourceTree = "<group>"; };
 		518DEAFB224F1B7F00D18869 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		518DEAFD224F1F7800D18869 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 				518DEAFD224F1F7800D18869 /* UIDevice+.swift */,
 				84C7C9D722504CEF0088F501 /* UIView+gradient.swift */,
 				84C7C9D9225057D80088F501 /* CALayer+.swift */,
+				514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */,
+				514C8EC92250A36900C52DB7 /* UIButton+factory.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -588,6 +594,7 @@
 				84D624B1224C833E007E397D /* AppDelegate.swift in Sources */,
 				84C7C9D1224C93490088F501 /* UIFont+996.swift in Sources */,
 				8493C8B6224E63F800D28C22 /* IcuTabView.swift in Sources */,
+				514C8ECA2250A36900C52DB7 /* UIButton+factory.swift in Sources */,
 				84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
@@ -602,6 +609,7 @@
 				518DEAFE224F1F7800D18869 /* UIDevice+.swift in Sources */,
 				1E39E1DB224E67E300BA4EFA /* ICUSaying.swift in Sources */,
 				84C7C9DD225082BA0088F501 /* MainCalendarViewCell.swift in Sources */,
+				514C8EC82250A28D00C52DB7 /* UIButton+gradient.swift in Sources */,
 				84C7C9D4224C93820088F501 /* SettingViewController.swift in Sources */,
 				8493C8B9224E66A900D28C22 /* IcuCalendarView.swift in Sources */,
 			);

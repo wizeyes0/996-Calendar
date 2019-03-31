@@ -19,12 +19,15 @@ class ICUFeedbackViewController: UIViewController  {
     lazy var appVersionBuild = "Version:\(appVersion)(\(appBuild))"
     
     @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var rateButton: UIButton!
+    @IBOutlet weak var feedbackButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.versionLabel.text = self.appVersionBuild
-
+        versionLabel.text = appVersionBuild
+        feedbackButton.setGradientShadow()
+        rateButton.setGradientShadow()
     }
 
     @IBAction func closeButtonClickedAction(_ sender: Any) {

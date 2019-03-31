@@ -188,7 +188,7 @@
                                     <constraint firstAttribute="height" constant="40" id="A7g-kV-CHB"/>
                                 </constraints>
                                 <state key="normal" title="反馈建议">
-                                    <color key="titleColor" red="0.062745098040000002" green="0.50196078430000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -227,7 +227,7 @@
                                     <constraint firstAttribute="height" constant="40" id="r4p-AI-7KA"/>
                                 </constraints>
                                 <state key="normal" title="好评鼓励">
-                                    <color key="titleColor" red="0.062745098040000002" green="0.50196078430000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -266,6 +266,8 @@
                         <viewLayoutGuide key="safeArea" id="6qy-iB-ecb"/>
                     </view>
                     <connections>
+                        <outlet property="feedbackButton" destination="0N1-qK-h00" id="tWc-us-41I"/>
+                        <outlet property="rateButton" destination="8gn-Rx-wZN" id="U3N-zY-OtA"/>
                         <outlet property="versionLabel" destination="3Mc-0Y-OBN" id="P1h-oS-QUl"/>
                     </connections>
                 </viewController>
