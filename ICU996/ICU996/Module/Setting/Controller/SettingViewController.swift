@@ -28,7 +28,7 @@ class SettingViewController: UIViewController {
                 ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":""],
                 ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":""],
                 ["title": "Pugword","icon":"pugword","desc":"超高颜值的密码保险箱","appId":""],
-                ["title": "寻色","icon":"logo","desc":"为你寻找最美配色","appId":""]
+                ["title": "寻色","icon":"colorcapture","desc":"为你寻找最美配色","appId":"1439521846"]
             ]
         ]
     }()
