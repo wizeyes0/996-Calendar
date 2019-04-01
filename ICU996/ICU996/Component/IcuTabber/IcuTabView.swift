@@ -49,7 +49,7 @@ class IcuTabView: UIView {
         view.backgroundColor = UIColor(rgb: 0xe95a7d)
         view.layer.cornerRadius = 5
         view.setGradientColor(colors: UIColor(rgb: 0xE95A7D), UIColor(rgb: 0xFDAD9F), locations: [0, 1])
-        view.frame = CGRect(x: 22, y: 24, width: 50, height: 10)
+        view.frame = CGRect(x: 26, y: 24, width: 50, height: 10)
         return view
     }()
     
@@ -122,7 +122,7 @@ extension IcuTabView {
         let ori = lightLineView.frame
         
         if let anim = POPSpringAnimation.init(propertyNamed: kPOPViewFrame) {
-            anim.toValue = CGRect(x: sol.frame.minX + 4,
+            anim.toValue = CGRect(x: sol.frame.minX + (type == .hourSalary ? 4 : 8),
                                   y: ori.minY,
                                   width: ori.width,
                                   height: ori.height)

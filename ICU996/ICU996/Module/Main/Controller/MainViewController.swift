@@ -130,14 +130,25 @@ class MainViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate
-extension MainViewController: UICollectionViewDelegate {}
+extension MainViewController: UICollectionViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        print("scrollViewDidEndDragging")
+    }
+    
+}
 
 // MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.cellModels.count
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            tabView.changeToHourSalary()
+        } else {
+            tabView.changeToCalendar()
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let vm = viewModel.cellModels[indexPath.row] as? MainCalendarViewCellModel {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarViewCell", for: indexPath)
