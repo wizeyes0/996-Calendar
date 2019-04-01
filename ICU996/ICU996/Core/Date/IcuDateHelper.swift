@@ -65,6 +65,10 @@ class IcuDateHelper: NSObject {
         return (Int(formattedHourDate) ?? 0, Int(formattedMinuteDate) ?? 0)
     }
     
+    
+    /// 判断是否是假期
+    ///
+    /// - Returns: <#return value description#>
     public func isHoliday() -> (Bool, String) {
         let year = getYear()
         let dateFormat = DateFormatter()

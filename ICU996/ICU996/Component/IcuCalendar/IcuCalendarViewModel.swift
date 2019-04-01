@@ -49,7 +49,15 @@ class IcuCalendarViewModel: NSObject {
         }
         // 如果是工作日，
         else {
-            
+            let timeRes = IcuDateHelper.shared.getHourAndMinute()
+            let hour = timeRes.0
+            if hour < 9 || hour >= 17 {
+                doText = "不上"
+                reasonText = "已经进入下班时间"
+            } else {
+                doText = "上"
+                reasonText = "法定工作时间"
+            }
         }
     }
 }
