@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import DeviceKit
+import SwiftMessages
 
 class SettingViewController: UIViewController {
     
@@ -32,6 +33,10 @@ class SettingViewController: UIViewController {
                 ["title": "寻色","icon":"colorcapture","desc":"为你寻找最美配色","appId":"1439521846"]
             ]
         ]
+    }()
+    private lazy var salaryPopView: IcuPopView = {
+        let p = IcuPopView()
+        return p
     }()
     
     private lazy var headerTitle: Array = {
@@ -132,7 +137,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            print(indexPath.row)
+            setSalary()
         case 1:
             if (indexPath.row == 0) {
                 let privacyVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PrivacyViewController")
@@ -155,7 +160,23 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension SettingViewController {
     func setSalary() {
+        salaryPopView.confirmEvent = { salary in
+            SwiftMessages.hideAll()
+            //保存月薪值
+            IcuCacheManager.get.usersalary = salary
+        }
         //弹窗-设置月薪弹窗
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .center
+        config.duration = .forever
+        config.dimMode = .blur(style: UIBlurEffect.Style.dark, alpha: 0.8, interactive: true)
+        config.presentationContext = .window(windowLevel: .statusBar)
+
+        SwiftMessages.show(config:config, view: salaryPopView)
+        salaryPopView.snp.makeConstraints { (maker) in
+            maker.width.height.equalTo(335)
+        }
+        
     }
     
     func shareApp() {
@@ -173,59 +194,4 @@ extension SettingViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-//    func sendMailInApp()
-//    {
-//        if MFMailComposeViewController.canSendMail() {
-//            //注意这个实例要写在if block里，否则无法发送邮件时会出现两次提示弹窗（一次是系统的）
-//            let mailComposeViewController = configuredMailComposeViewController()
-//            self.present(mailComposeViewController, animated: true, completion: nil)
-//        } else {
-//            self.showSendMailErrorAlert()
-//        }
-//    }
-//
-//    func configuredMailComposeViewController() -> MFMailComposeViewController {
-//
-//        let mailComposeVC = MFMailComposeViewController()
-//
-//        mailComposeVC.mailComposeDelegate = self
-//        mailComposeVC.setToRecipients(["<你的邮箱地址>"])
-//        mailComposeVC.setSubject("关于996日历的反馈建议")
-//        mailComposeVC.setMessageBody(self.messageBody(), isHTML: false)
-//
-//        return mailComposeVC
-//    }
-//
-//    func messageBody() -> String {
-//        let systemVersion = UIDevice.current.systemVersion
-//        let deviceModel = Device()
-//        let appversion = UIDevice().appVersion
-//        return "\n\n\n\n\n\n系统版本：\(systemVersion)\n设备型号：\(deviceModel)\nAPP版本：\(appversion)"
-//    }
-//
-//    func showSendMailErrorAlert() {
-//
-//        let sendMailErrorAlert = UIAlertController(title: "无法发送邮件", message: "您的设备尚未设置邮箱，请在“邮件”应用中设置后再尝试发送。", preferredStyle: .alert)
-//        sendMailErrorAlert.addAction(UIAlertAction(title: "确定", style: .default) { _ in })
-//        self.present(sendMailErrorAlert, animated: true){}
-//
-//    }
 }
-
-//extension SettingViewController: MFMailComposeViewControllerDelegate {
-//
-//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//
-//        switch result {
-//        case .cancelled:
-//            print("取消发送")
-//        case .sent:
-//            print("发送成功")
-//        default:
-//            break
-//        }
-//        self.dismiss(animated: true, completion: nil)
-//
-//    }
-//
-//}

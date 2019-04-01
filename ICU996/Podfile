@@ -16,6 +16,7 @@ def ui_component
   # UI 组件
   pod 'pop', '~> 1.0.12'
   pod 'AZCategory'
+  pod 'SwiftMessages'
 end
 
 def buz_component
