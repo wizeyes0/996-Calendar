@@ -321,7 +321,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0N1-qK-h00">
-                                <rect key="frame" x="126.5" y="610" width="161" height="40"/>
+                                <rect key="frame" x="126.5" y="621" width="161" height="40"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="47H-Mp-Nxc"/>
@@ -340,7 +340,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gn-Rx-wZN">
-                                <rect key="frame" x="126.5" y="540" width="161" height="40"/>
+                                <rect key="frame" x="126.5" y="551" width="161" height="40"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="OSL-LJ-3VM"/>
@@ -361,7 +361,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8gn-Rx-wZN" firstAttribute="top" secondItem="bSI-Lj-ADS" secondAttribute="bottom" constant="5" id="24V-51-voi"/>
+                            <constraint firstItem="8gn-Rx-wZN" firstAttribute="top" secondItem="bSI-Lj-ADS" secondAttribute="bottom" constant="16" id="24V-51-voi"/>
                             <constraint firstItem="0N1-qK-h00" firstAttribute="centerX" secondItem="6qy-iB-ecb" secondAttribute="centerX" id="9bS-cR-HTt"/>
                             <constraint firstItem="8gn-Rx-wZN" firstAttribute="centerX" secondItem="6qy-iB-ecb" secondAttribute="centerX" id="FS8-Gb-gJp"/>
                             <constraint firstItem="LdA-A8-Q29" firstAttribute="trailing" secondItem="6qy-iB-ecb" secondAttribute="trailing" constant="-10" id="KYy-tJ-mLQ"/>
@@ -410,7 +410,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNV-CS-JSs">
-                                        <rect key="frame" x="349" y="15.5" width="30" height="33"/>
+                                        <rect key="frame" x="364" y="15.5" width="30" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="HWZ-xE-72e"/>
                                             <constraint firstAttribute="height" constant="33" id="k7a-rQ-VhY"/>
@@ -429,7 +429,7 @@
                                     <constraint firstAttribute="height" constant="64" id="P7y-mU-Nuf"/>
                                     <constraint firstItem="qey-EY-lvT" firstAttribute="centerY" secondItem="VqH-Lt-MtV" secondAttribute="centerY" id="bzd-rB-LIU"/>
                                     <constraint firstItem="qey-EY-lvT" firstAttribute="centerX" secondItem="VqH-Lt-MtV" secondAttribute="centerX" id="l2w-h9-8AW"/>
-                                    <constraint firstAttribute="trailing" secondItem="bNV-CS-JSs" secondAttribute="trailing" constant="35" id="zma-wU-idb"/>
+                                    <constraint firstAttribute="trailing" secondItem="bNV-CS-JSs" secondAttribute="trailing" constant="20" id="zma-wU-idb"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wq-Md-BHb">

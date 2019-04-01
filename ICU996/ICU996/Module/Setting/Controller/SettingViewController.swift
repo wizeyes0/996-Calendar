@@ -20,21 +20,22 @@ class SettingViewController: UIViewController {
             [
                 ["title": "隐私条例","icon":"privacy"],
                 ["title": "分享996日历","icon":"share"],
-//                ["title": "意见反馈","icon":"feedback"],
+                //["title": "意见反馈","icon":"feedback"],
                 ["title": "关于我们","icon":"aboutus"]
             ],
             [
-                ["title": "Sepicat","icon":"Sepicat","desc":"最棒github客户端","appId":""],
-                ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":""],
-                ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":""],
-                ["title": "Pugword","icon":"pugword","desc":"超高颜值的密码保险箱","appId":""],
+                ["title": "Sepicat","icon":"Sepicat","desc":"最棒github客户端","appId":"1355383210"],
+                ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":"1439448960"],
+                ["title": "小时钟","icon":"littleClock","desc":"全屏数字翻页时钟","appId":"1455066494"],
+                ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":"1441902045"],
+                ["title": "Pugword","icon":"pugword","desc":"超高颜值的密码保险箱","appId":"1307617053"],
                 ["title": "寻色","icon":"colorcapture","desc":"为你寻找最美配色","appId":"1439521846"]
             ]
         ]
     }()
     
     private lazy var headerTitle: Array = {
-        return ["功能","关于","独立开发者的作品With❤️"]
+        return ["功能","关于","独立开发者们的作品"]
     }()
     
     // 懒加载TableView
@@ -53,7 +54,7 @@ class SettingViewController: UIViewController {
         self.navigationItem.title = "设置"
         tableView.backgroundColor = UIColor(red: 247, green: 247, blue: 247)
         let leftBtn = UIBarButtonItem(image: UIImage(named: "close"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(close))
-        self.navigationItem.leftBarButtonItem = leftBtn
+        self.navigationItem.rightBarButtonItem = leftBtn
         self.view.addSubview(self.tableView)
     }
     
