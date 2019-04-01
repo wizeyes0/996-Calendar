@@ -157,7 +157,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mc-0Y-OBN">
-                                <rect key="frame" x="171" y="811" width="72" height="21"/>
+                                <rect key="frame" x="171" y="823" width="72" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4oy-4O-P1f"/>
                                 </constraints>
@@ -368,7 +368,7 @@
                             <constraint firstItem="0N1-qK-h00" firstAttribute="top" secondItem="8gn-Rx-wZN" secondAttribute="bottom" constant="30" id="PAk-TQ-owS"/>
                             <constraint firstItem="bSI-Lj-ADS" firstAttribute="trailing" secondItem="6qy-iB-ecb" secondAttribute="trailing" id="Qjz-FK-mEW"/>
                             <constraint firstItem="bSI-Lj-ADS" firstAttribute="leading" secondItem="6qy-iB-ecb" secondAttribute="leading" id="SC9-LD-6mM"/>
-                            <constraint firstItem="6qy-iB-ecb" firstAttribute="bottom" secondItem="3Mc-0Y-OBN" secondAttribute="bottom" constant="30" id="b5f-8N-0cH"/>
+                            <constraint firstItem="6qy-iB-ecb" firstAttribute="bottom" secondItem="3Mc-0Y-OBN" secondAttribute="bottom" constant="18" id="b5f-8N-0cH"/>
                             <constraint firstItem="3Mc-0Y-OBN" firstAttribute="centerX" secondItem="Obq-Wp-cbe" secondAttribute="centerX" id="bk3-R9-Egg"/>
                             <constraint firstItem="LdA-A8-Q29" firstAttribute="top" secondItem="6qy-iB-ecb" secondAttribute="top" id="cya-df-TIL"/>
                             <constraint firstItem="2XN-QZ-Imb" firstAttribute="top" secondItem="6qy-iB-ecb" secondAttribute="top" constant="30" id="jc7-D1-D3t"/>
