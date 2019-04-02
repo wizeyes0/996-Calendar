@@ -80,19 +80,7 @@ class IcuPopView: UIView {
         label.textColor = UIColor(red: 181, green: 181, blue: 181)
         return label
     }()
-    
-//    lazy  var config:SwiftMessages.Config = {
-//        var con = SwiftMessages.Config()
-//        con.presentationStyle = .center
-//        con.duration = .forever
-//        con.dimMode = .blur(style: UIBlurEffect.Style.dark, alpha: 0.8, interactive: true)
-//        con.presentationContext = .window(windowLevel: .statusBar)
-//        return con
-//    }()
-//    
-//    func show() {
-//        SwiftMessages.show(config:self.config, view: self.backView)
-//    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialViews()
