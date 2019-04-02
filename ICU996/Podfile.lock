@@ -22,6 +22,9 @@ PODS:
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
   - SnapKit (4.2.0)
+  - SwiftMessages (6.0.2):
+    - SwiftMessages/App (= 6.0.2)
+  - SwiftMessages/App (6.0.2)
   - SwiftyUserDefaults (4.0.0-beta.2)
 
 DEPENDENCIES:
@@ -37,6 +40,7 @@ DEPENDENCIES:
   - Reveal-SDK (from `Reveal`)
   - SDWebImage (~> 4.4.6)
   - SnapKit (~> 4.2.0)
+  - SwiftMessages
   - SwiftyUserDefaults (= 4.0.0-beta.2)
 
 SPEC REPOS:
@@ -53,6 +57,7 @@ SPEC REPOS:
     - pop
     - SDWebImage
     - SnapKit
+    - SwiftMessages
     - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
@@ -73,8 +78,9 @@ SPEC CHECKSUMS:
   Reveal-SDK: 53c2b252e7d21750ada7697f2d548fa3235a5f7d
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
   SwiftyUserDefaults: 39ec70433f22f3052a64bc5fbfb34f46932b8bf1
 
-PODFILE CHECKSUM: 5f72bf27596730d07a23812bb25a34adb8ef5f62
+PODFILE CHECKSUM: b590bd7c885cdc6b83eb12841c1b002d98d55b01
 
 COCOAPODS: 1.6.1

@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import DeviceKit
+import SwiftMessages
 
 class SettingViewController: UIViewController {
     
@@ -20,21 +21,27 @@ class SettingViewController: UIViewController {
             [
                 ["title": "隐私条例","icon":"privacy"],
                 ["title": "分享996日历","icon":"share"],
-//                ["title": "意见反馈","icon":"feedback"],
+                //["title": "意见反馈","icon":"feedback"],
                 ["title": "关于我们","icon":"aboutus"]
             ],
             [
-                ["title": "Sepicat","icon":"Sepicat","desc":"最棒github客户端","appId":""],
-                ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":""],
-                ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":""],
-                ["title": "Pugword","icon":"pugword","desc":"超高颜值的密码保险箱","appId":""],
-                ["title": "寻色","icon":"colorcapture","desc":"为你寻找最美配色","appId":"1439521846"]
+                ["title": "Sepicat","icon":"Sepicat","desc":"最棒github客户端","appId":"1355383210"],
+                ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":"1439448960"],
+                ["title": "小时钟","icon":"littleClock","desc":"全屏数字翻页时钟","appId":"1455066494"],
+                ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":"1441902045"],
+                ["title": "Pugword","icon":"pugword","desc":"超高颜值的密码保险箱","appId":"1307617053"],
+                ["title": "寻色","icon":"colorcapture","desc":"为你寻找最美配色","appId":"1439521846"],
+                ["title": "番茄清单","icon":"fanqieqingdan","desc":"随时随地记录，解放你的大脑","appId":"1150993112"]
             ]
         ]
     }()
+    private lazy var salaryPopView: IcuPopView = {
+        let p = IcuPopView()
+        return p
+    }()
     
     private lazy var headerTitle: Array = {
-        return ["功能","关于","独立开发者的作品With❤️"]
+        return ["功能","关于","独立开发者们的作品"]
     }()
     
     // 懒加载TableView
@@ -53,7 +60,7 @@ class SettingViewController: UIViewController {
         self.navigationItem.title = "设置"
         tableView.backgroundColor = UIColor(red: 247, green: 247, blue: 247)
         let leftBtn = UIBarButtonItem(image: UIImage(named: "close"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(close))
-        self.navigationItem.leftBarButtonItem = leftBtn
+        self.navigationItem.rightBarButtonItem = leftBtn
         self.view.addSubview(self.tableView)
     }
     
@@ -131,7 +138,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            print(indexPath.row)
+            setSalary()
         case 1:
             if (indexPath.row == 0) {
                 let privacyVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PrivacyViewController")
@@ -154,7 +161,23 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension SettingViewController {
     func setSalary() {
+        salaryPopView.confirmEvent = { salary in
+            SwiftMessages.hideAll()
+            //保存月薪值
+            IcuCacheManager.get.usersalary = salary
+        }
         //弹窗-设置月薪弹窗
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .center
+        config.duration = .forever
+        config.dimMode = .blur(style: UIBlurEffect.Style.dark, alpha: 0.8, interactive: true)
+        config.presentationContext = .window(windowLevel: .statusBar)
+
+        SwiftMessages.show(config:config, view: salaryPopView)
+        salaryPopView.snp.makeConstraints { (maker) in
+            maker.width.height.equalTo(335)
+        }
+        
     }
     
     func shareApp() {
@@ -172,59 +195,4 @@ extension SettingViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-//    func sendMailInApp()
-//    {
-//        if MFMailComposeViewController.canSendMail() {
-//            //注意这个实例要写在if block里，否则无法发送邮件时会出现两次提示弹窗（一次是系统的）
-//            let mailComposeViewController = configuredMailComposeViewController()
-//            self.present(mailComposeViewController, animated: true, completion: nil)
-//        } else {
-//            self.showSendMailErrorAlert()
-//        }
-//    }
-//
-//    func configuredMailComposeViewController() -> MFMailComposeViewController {
-//
-//        let mailComposeVC = MFMailComposeViewController()
-//
-//        mailComposeVC.mailComposeDelegate = self
-//        mailComposeVC.setToRecipients(["<你的邮箱地址>"])
-//        mailComposeVC.setSubject("关于996日历的反馈建议")
-//        mailComposeVC.setMessageBody(self.messageBody(), isHTML: false)
-//
-//        return mailComposeVC
-//    }
-//
-//    func messageBody() -> String {
-//        let systemVersion = UIDevice.current.systemVersion
-//        let deviceModel = Device()
-//        let appversion = UIDevice().appVersion
-//        return "\n\n\n\n\n\n系统版本：\(systemVersion)\n设备型号：\(deviceModel)\nAPP版本：\(appversion)"
-//    }
-//
-//    func showSendMailErrorAlert() {
-//
-//        let sendMailErrorAlert = UIAlertController(title: "无法发送邮件", message: "您的设备尚未设置邮箱，请在“邮件”应用中设置后再尝试发送。", preferredStyle: .alert)
-//        sendMailErrorAlert.addAction(UIAlertAction(title: "确定", style: .default) { _ in })
-//        self.present(sendMailErrorAlert, animated: true){}
-//
-//    }
 }
-
-//extension SettingViewController: MFMailComposeViewControllerDelegate {
-//
-//    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//
-//        switch result {
-//        case .cancelled:
-//            print("取消发送")
-//        case .sent:
-//            print("发送成功")
-//        default:
-//            break
-//        }
-//        self.dismiss(animated: true, completion: nil)
-//
-//    }
-//
-//}

@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hqY-94-nAZ">
-                        <rect key="frame" x="16" y="11" width="48" height="48"/>
+                        <rect key="frame" x="16" y="15" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="48" id="Cm4-q1-KgE"/>
-                            <constraint firstAttribute="height" constant="48" id="TDr-Jd-bEn"/>
+                            <constraint firstAttribute="width" constant="40" id="Cm4-q1-KgE"/>
+                            <constraint firstAttribute="height" constant="40" id="TDr-Jd-bEn"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iSystant Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAQ-w2-qTI">
-                        <rect key="frame" x="74" y="11" width="230" height="21"/>
+                        <rect key="frame" x="66" y="15" width="238" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="ryu-cq-8Tu"/>
                         </constraints>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻松查看手机硬件信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvt-9c-E30">
-                        <rect key="frame" x="74" y="40" width="230" height="21"/>
+                        <rect key="frame" x="66" y="38" width="238" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="a40-Fr-zhe"/>
                         </constraints>
@@ -46,7 +46,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Bvt-9c-E30" firstAttribute="top" secondItem="zAQ-w2-qTI" secondAttribute="bottom" constant="8" id="DKV-gR-uvG"/>
+                    <constraint firstItem="Bvt-9c-E30" firstAttribute="top" secondItem="zAQ-w2-qTI" secondAttribute="bottom" constant="2" id="DKV-gR-uvG"/>
                     <constraint firstAttribute="trailing" secondItem="zAQ-w2-qTI" secondAttribute="trailing" constant="16" id="UEE-DM-YNF"/>
                     <constraint firstItem="zAQ-w2-qTI" firstAttribute="leading" secondItem="hqY-94-nAZ" secondAttribute="trailing" constant="10" id="ZoB-Yz-6Xc"/>
                     <constraint firstItem="zAQ-w2-qTI" firstAttribute="top" secondItem="hqY-94-nAZ" secondAttribute="top" id="bvZ-dM-HLZ"/>
