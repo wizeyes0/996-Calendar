@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
         collectionView.alwaysBounceHorizontal = true
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
         collectionView.register(MainCalendarViewCell.self, forCellWithReuseIdentifier: "MainCalendarViewCell")
+        collectionView.register(MainHourSalaryViewCell.self, forCellWithReuseIdentifier: "MainHourSalaryViewCell")
         return collectionView
     }()
 
@@ -142,6 +143,7 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.cellModels.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             tabView.changeToHourSalary()
@@ -154,6 +156,12 @@ extension MainViewController: UICollectionViewDataSource {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCalendarViewCell", for: indexPath)
                 as? MainCalendarViewCell {
                 cell.viewModel = vm
+                return cell
+            }
+        }
+        else if let vm = viewModel.cellModels[indexPath.row] as? MainHourSalaryViewCellModel {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainHourSalaryViewCell", for: indexPath)
+                as? MainHourSalaryViewCell {
                 return cell
             }
         }
@@ -174,7 +182,7 @@ class MainViewModel: NSObject {
     
     private func initialDatas() {
         cellModels.append(MainCalendarViewCellModel(calendarModel: IcuCalendarViewModel()))
-        cellModels.append(MainCalendarViewCellModel(calendarModel: IcuCalendarViewModel()))
+        cellModels.append(MainHourSalaryViewCellModel())
     }
 }
 
