@@ -112,15 +112,36 @@ class IcuPunchManager: NSObject {
     public func calcHourSalary(_ workHours: CGFloat) -> CGFloat {
         if IcuCacheManager.get.hasSetSalary, let mounthSalary = IcuCacheManager.get.usersalary {
             // 先获取当前月的天数
-            let calendar = Calendar.current
-            guard let range = calendar.range(of: .calendar, in: .month, for: Date()) else {
-                return 0.0
-            }
-            let daysInCurrentMonth = range.count
+            let daysInCurrentMonth = getDaysInCurrentMonth()
             // 日薪
             let daySalary: CGFloat = CGFloat(mounthSalary) / CGFloat(daysInCurrentMonth)
             return daySalary / workHours
         }
         return 0.0
+    }
+    
+    func getDaysInCurrentMonth() -> Int {
+        let calendar = NSCalendar.current
+        
+        let date = Date()
+        let nowComps = calendar.dateComponents([.year, .month, .day], from: date)
+        let year = nowComps.year ?? 0
+        let month = nowComps.month ?? 0
+        
+        var startComps = DateComponents()
+        startComps.day = 1
+        startComps.month = month
+        startComps.year = year
+        
+        var endComps = DateComponents()
+        endComps.day = 1
+        endComps.month = month == 12 ? 1 : month + 1
+        endComps.year = month == 12 ? year + 1 : year
+        
+        let startDate = calendar.date(from: startComps)
+        let endDate = calendar.date(from: endComps)
+        
+        let diff = calendar.dateComponents([.day], from: startDate!, to: endDate!)
+        return diff.day!
     }
 }

@@ -59,8 +59,18 @@ class IcuHourSalaryView: UIView {
     lazy var realHourSalaryDescLabel: UILabel = {
         let label = UILabel()
         label.text = "今日实际时薪："
+        label.textAlignment = .right
         label.font = UIFont.icuFont(.medium, size: 13)
-//        label.textColor = UIColor()
+        label.textColor = UIColor.showColor()
+        return label
+    }()
+    
+    lazy var realHourSalaryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "￥ 80.00"
+        label.textAlignment = .left
+        label.font = UIFont.icuFont(.medium, size: 28)
+        label.textColor = UIColor.highlightColor()
         return label
     }()
     
@@ -81,12 +91,15 @@ class IcuHourSalaryView: UIView {
         addSubview(timeLabel)
         addSubview(downTimeLabel)
         addSubview(offWorkButton)
+        addSubview(realHourSalaryLabel)
+        addSubview(realHourSalaryDescLabel)
     }
     
     private func updateViews() {
         timeLabel.text = viewModel.timeText
         downTimeLabel.text = viewModel.overTimeText
         offWorkButton.setTitle(viewModel.buttonShowText, for: .normal)
+        realHourSalaryLabel.text = viewModel.realHourSalaryText
     }
     
     private func initialLayouts() {
@@ -116,6 +129,16 @@ class IcuHourSalaryView: UIView {
             make.height.equalTo(40)
             make.width.equalTo(200)
         }
+        
+        realHourSalaryLabel.snp.makeConstraints { make in
+            make.top.equalTo(offWorkButton.snp.bottom).offset(32)
+            make.left.equalTo(self.snp.centerX)
+        }
+        
+        realHourSalaryDescLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(realHourSalaryLabel)
+            make.right.equalTo(realHourSalaryLabel.snp.left)
+        }
     }
 }
 
@@ -137,6 +160,7 @@ class IcuHourSalaryViewModel: NSObject {
     private(set) var timeText: String = ""
     private(set) var overTimeText: String = ""
     private(set) var buttonShowText: String = ""
+    private(set) var realHourSalaryText: String = ""
 
     override init() {
         super.init()
@@ -157,7 +181,7 @@ class IcuHourSalaryViewModel: NSObject {
         // 处理超出部分
         if currentHour >= 18 {
             let overtimeRes: (Int, Int) = IcuPunchManager.shared.calcOvertimeInterval(Date())
-            overTimeText = formatShowText(overtimeRes)
+            overTimeText = "已经超过额定工时\(formatShowText(overtimeRes))"
         }
         else {
             overTimeText = "正常工作时间"
@@ -169,6 +193,13 @@ class IcuHourSalaryViewModel: NSObject {
             buttonShowText = "下班结算"
         } else {
             buttonShowText = "想看看实际时薪吗？"
+        }
+        
+        // 真实时薪数据更新
+        if IcuCacheManager.get.hasSetSalary {
+            let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
+            let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
+            realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
         }
     }
     
