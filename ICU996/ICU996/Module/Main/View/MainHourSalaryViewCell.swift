@@ -10,7 +10,13 @@ import UIKit
 
 class MainHourSalaryViewCell: UICollectionViewCell {
     
-    lazy var hourSalaryView: IcuHourSalaryView = {
+    public var viewModel = MainHourSalaryViewCellModel(hourSalaryViewModel: IcuHourSalaryViewModel()) {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    lazy private var hourSalaryView: IcuHourSalaryView = {
         let view = IcuHourSalaryView()
         return view
     }()
@@ -30,6 +36,7 @@ class MainHourSalaryViewCell: UICollectionViewCell {
     }
     
     public func updateViews() {
+        hourSalaryView.viewModel = viewModel.hourSalaryViewModel
     }
     
     private func initialLayouts() {
@@ -39,4 +46,12 @@ class MainHourSalaryViewCell: UICollectionViewCell {
     }
 }
 
-class MainHourSalaryViewCellModel: NSObject {}
+class MainHourSalaryViewCellModel: NSObject {
+    
+    private(set) var hourSalaryViewModel: IcuHourSalaryViewModel
+    
+    init(hourSalaryViewModel: IcuHourSalaryViewModel) {
+        self.hourSalaryViewModel = hourSalaryViewModel
+        super.init()
+    }
+}

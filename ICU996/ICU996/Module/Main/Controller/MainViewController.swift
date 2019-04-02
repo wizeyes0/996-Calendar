@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 0
         layout.itemSize = CGSize(width: self.view.frame.width,
                                  height: self.view.frame.height - 254)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
@@ -131,12 +131,7 @@ class MainViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate
-extension MainViewController: UICollectionViewDelegate {
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        print("scrollViewDidEndDragging")
-    }
-    
-}
+extension MainViewController: UICollectionViewDelegate {}
 
 // MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
@@ -162,6 +157,7 @@ extension MainViewController: UICollectionViewDataSource {
         else if let vm = viewModel.cellModels[indexPath.row] as? MainHourSalaryViewCellModel {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainHourSalaryViewCell", for: indexPath)
                 as? MainHourSalaryViewCell {
+                cell.viewModel = vm
                 return cell
             }
         }
@@ -182,7 +178,7 @@ class MainViewModel: NSObject {
     
     private func initialDatas() {
         cellModels.append(MainCalendarViewCellModel(calendarModel: IcuCalendarViewModel()))
-        cellModels.append(MainHourSalaryViewCellModel())
+        cellModels.append(MainHourSalaryViewCellModel(hourSalaryViewModel: IcuHourSalaryViewModel()))
     }
 }
 

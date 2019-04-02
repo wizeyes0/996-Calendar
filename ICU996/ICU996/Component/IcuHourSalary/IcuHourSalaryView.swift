@@ -10,6 +10,12 @@ import UIKit
 
 class IcuHourSalaryView: UIView {
     
+    public var viewModel: IcuHourSalaryViewModel = IcuHourSalaryViewModel() {
+        didSet {
+            updateViews()
+        }
+    }
+    
     private var bakView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -68,7 +74,7 @@ class IcuHourSalaryView: UIView {
     }
     
     private func updateViews() {
-       
+        timeLabel.text = viewModel.timeText
     }
     
     private func initialLayouts() {
@@ -97,5 +103,34 @@ class IcuHourSalaryView: UIView {
             make.height.equalTo(40)
             make.width.equalTo(200)
         }
+    }
+}
+
+class IcuHourSalaryViewModel: NSObject {
+    
+    private(set) var timeText: String = ""
+    private(set) var overTimeText: String = ""
+    
+    override init() {
+        super.init()
+        initialDatas()
+    }
+    
+    private func initialDatas() {
+        updateDatas()
+    }
+    
+    public func updateDatas() {
+        let timeRes: (Int, Int) = IcuPunchManager.shared.calcInterval(to: Date())
+        let hour = timeRes.0
+        let minute = timeRes.1
+        var timeText: String = ""
+        if hour > 0 {
+            timeText += "\(hour)小时"
+        }
+        if minute > 0 {
+            timeText += "\(minute)分钟"
+        }
+        self.timeText = timeText
     }
 }

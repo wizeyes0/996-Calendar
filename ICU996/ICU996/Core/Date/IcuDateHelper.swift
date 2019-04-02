@@ -18,18 +18,32 @@ class IcuDateHelper: NSObject {
         super.init()
     }
     
-    public func getYear() -> (Int) {
+    
+    /// 返回年份字符串
+    ///
+    /// - Returns: (Year): (String)
+    public func getYearStr() -> String {
         let date = Date()
         let yearFormat = DateFormatter()
         yearFormat.dateFormat = "yyyy"
         let formattedYearDate = yearFormat.string(from: date)
-        return Int(formattedYearDate) ?? 0
+        return formattedYearDate
     }
     
-    /// 返回月份和日期数据
+    
+    /// 返回年份
     ///
-    /// - Returns: (Mounth, Day): (Int, Int)
-    public func getDate() -> (Int, Int) {
+    /// - Returns: (Year): (Int)
+    public func getYear() -> Int {
+        let year: String = getYearStr()
+        return Int(year) ?? 0
+    }
+    
+    
+    /// 返回月份和日期数据的字符串
+    ///
+    /// - Returns: (Mounth, Day): (String, String)
+    public func getDateStr() -> (String, String) {
         let date = Date()
         let mounthFormat = DateFormatter()
         mounthFormat.dateFormat = "MM"
@@ -37,10 +51,17 @@ class IcuDateHelper: NSObject {
         dayFormat.dateFormat = "dd"
         let formattedMounthDate = mounthFormat.string(from: date)
         let formattedDayDate = dayFormat.string(from: date)
-        return (Int(formattedMounthDate) ?? 0, Int(formattedDayDate) ?? 0)
+        return (formattedMounthDate, formattedDayDate)
     }
     
-    
+    /// 返回月份和日期数据
+    ///
+    /// - Returns: (Mounth, Day): (Int, Int)
+    public func getDate() -> (Int, Int) {
+        let resStr = getDateStr()
+        return (Int(resStr.0) ?? 0, Int(resStr.1) ?? 0)
+    }
+
     /// 返回星期几
     ///
     /// - Returns: (Weekday): (Int)
@@ -49,7 +70,6 @@ class IcuDateHelper: NSObject {
         let weekday = Calendar.current.component(.weekday, from: date)
         return weekday
     }
-    
     
     /// 返回小时和分钟
     ///
