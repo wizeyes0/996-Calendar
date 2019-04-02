@@ -10,6 +10,9 @@ PODS:
   - AZCategory/Gradient (0.0.2)
   - AZCategory/PushAndPop (0.0.2)
   - AZCategory/SafeArea (0.0.2)
+  - CocoaLumberjack/Core (3.5.2)
+  - CocoaLumberjack/Swift (3.5.2):
+    - CocoaLumberjack/Core
   - DeviceKit (1.13.0)
   - DLLocalNotifications (0.07)
   - FLEX (2.4.0)
@@ -31,6 +34,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - AlamofireObjectMapper (~> 5.0)
   - AZCategory
+  - CocoaLumberjack/Swift
   - DeviceKit (~> 1.3)
   - DLLocalNotifications (~> 0.07)
   - FLEX (~> 2.0)
@@ -48,6 +52,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireObjectMapper
     - AZCategory
+    - CocoaLumberjack
     - DeviceKit
     - DLLocalNotifications
     - FLEX
@@ -68,6 +73,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   AZCategory: fbcb0ba6e1da3790cd3aefe13216b5adc25f6b56
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   DeviceKit: 5a4accdb2918ce0b69e62dc3bef6e4d2cc06e2e4
   DLLocalNotifications: 5d358a73284efab757b4a4c07f3e5987b8afcef5
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
@@ -81,6 +87,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
   SwiftyUserDefaults: 39ec70433f22f3052a64bc5fbfb34f46932b8bf1
 
-PODFILE CHECKSUM: b590bd7c885cdc6b83eb12841c1b002d98d55b01
+PODFILE CHECKSUM: 33eff1181a04170ba2f70b79f16fbb73d8ebc7be
 
 COCOAPODS: 1.6.1

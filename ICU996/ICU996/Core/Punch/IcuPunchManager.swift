@@ -73,6 +73,21 @@ class IcuPunchManager: NSObject {
         return (0, 0)
     }
     
+    
+    /// 计算超出时长
+    ///
+    /// - Parameter time: <#time description#>
+    /// - Returns: <#return value description#>
+    public func calcOvertimeInterval(_ time: Date) -> (Int, Int) {
+        let yearStr = IcuDateHelper.shared.getYearStr()
+        let dateStr = IcuDateHelper.shared.getDateStr()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let fromTime = dateFormatter.date(from: "\(yearStr)-\(dateStr.0)-\(dateStr.1) 18:00:00")
+        let res: (Int, Int) = calcInterval(from: fromTime, to: time)
+        return res
+    }
+    
     /// 计算时间间隔，单位小时
     ///
     /// - Parameters:
@@ -90,6 +105,10 @@ class IcuPunchManager: NSObject {
         return CGFloat(hour) + CGFloat(minute) / 60.0
     }
     
+    /// 计算时薪
+    ///
+    /// - Parameter workHours: <#workHours description#>
+    /// - Returns: <#return value description#>
     public func calcHourSalary(_ workHours: CGFloat) -> CGFloat {
         if IcuCacheManager.get.hasSetSalary, let mounthSalary = IcuCacheManager.get.usersalary {
             // 先获取当前月的天数

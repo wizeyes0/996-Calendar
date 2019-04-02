@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CocoaLumberjack
 
 class IcuHourSalaryView: UIView {
     
@@ -49,10 +50,19 @@ class IcuHourSalaryView: UIView {
     
     lazy var offWorkButton: UIButton = {
         let button = UIButton.defaultGradient()
+        button.titleLabel?.font = UIFont.icuFont(.medium, size: 15)
         button.setTitle("想看看实际时薪吗？", for: .normal)
+        button.addTarget(self, action: #selector(offWorkButtonAction), for: .touchUpInside)
         return button
     }()
     
+    lazy var realHourSalaryDescLabel: UILabel = {
+        let label = UILabel()
+        label.text = "今日实际时薪："
+        label.font = UIFont.icuFont(.medium, size: 13)
+//        label.textColor = UIColor()
+        return label
+    }()
     
     override init(frame: CGRect) {
 //        self.viewModel = IcuCalendarViewModel()
@@ -75,6 +85,8 @@ class IcuHourSalaryView: UIView {
     
     private func updateViews() {
         timeLabel.text = viewModel.timeText
+        downTimeLabel.text = viewModel.overTimeText
+        offWorkButton.setTitle(viewModel.buttonShowText, for: .normal)
     }
     
     private func initialLayouts() {
@@ -89,6 +101,7 @@ class IcuHourSalaryView: UIView {
         
         timeLabel.snp.makeConstraints { make in
             make.top.equalTo(upTimeLabel).offset(12)
+            make.height.equalTo(70)
             make.centerX.equalToSuperview()
         }
         
@@ -106,11 +119,25 @@ class IcuHourSalaryView: UIView {
     }
 }
 
+
+// MARK: - Button Action
+extension IcuHourSalaryView {
+    @objc private func offWorkButtonAction() {
+        if IcuCacheManager.get.hasSetSalary {
+            DDLogDebug("TODO：打卡逻辑")
+        }
+        else {
+            IcuPopView.show()
+        }
+    }
+}
+
 class IcuHourSalaryViewModel: NSObject {
     
     private(set) var timeText: String = ""
     private(set) var overTimeText: String = ""
-    
+    private(set) var buttonShowText: String = ""
+
     override init() {
         super.init()
         initialDatas()
@@ -121,16 +148,38 @@ class IcuHourSalaryViewModel: NSObject {
     }
     
     public func updateDatas() {
+        // 处理已经工作时长
         let timeRes: (Int, Int) = IcuPunchManager.shared.calcInterval(to: Date())
-        let hour = timeRes.0
-        let minute = timeRes.1
-        var timeText: String = ""
-        if hour > 0 {
-            timeText += "\(hour)小时"
-        }
-        if minute > 0 {
-            timeText += "\(minute)分钟"
-        }
+        let timeText = formatShowText(timeRes)
         self.timeText = timeText
+        
+        let currentHour = IcuDateHelper.shared.getHourAndMinute().0
+        // 处理超出部分
+        if currentHour >= 18 {
+            let overtimeRes: (Int, Int) = IcuPunchManager.shared.calcOvertimeInterval(Date())
+            overTimeText = formatShowText(overtimeRes)
+        }
+        else {
+            overTimeText = "正常工作时间"
+        }
+        
+        // 时薪模块
+        if IcuCacheManager.get.hasSetSalary {
+            DDLogDebug("展示打开，计算时薪")
+            buttonShowText = "下班结算"
+        } else {
+            buttonShowText = "想看看实际时薪吗？"
+        }
+    }
+    
+    private func formatShowText(_ result: (Int, Int)) -> String {
+        var timeText: String = ""
+        if result.0 > 0 {
+            timeText += "\(result.0)小时"
+        }
+        if result.1 > 0 {
+            timeText += "\(result.1)分钟"
+        }
+        return timeText
     }
 }

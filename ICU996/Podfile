@@ -10,6 +10,7 @@ def basic_component
   pod 'SwiftyUserDefaults', '4.0.0-beta.2'
   pod 'DeviceKit', '~> 1.3'
   pod 'KVOController', '~> 1.2'
+  pod 'CocoaLumberjack/Swift'
 end
 
 def ui_component

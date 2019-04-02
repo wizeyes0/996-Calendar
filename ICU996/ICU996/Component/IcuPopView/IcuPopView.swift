@@ -8,8 +8,36 @@
 
 import UIKit
 import SwiftMessages
+import CocoaLumberjack
 
 class IcuPopView: UIView {
+    
+    static public func show() {
+        let salaryPopView = IcuPopView()
+        salaryPopView.confirmEvent = { salary in
+            SwiftMessages.hideAll()
+            // 保存月薪值
+            if salary > 0 {
+                DDLogInfo("保存月薪成功")
+                IcuCacheManager.get.usersalary = salary
+                IcuCacheManager.get.hasSetSalary = true
+            }
+            else {
+                DDLogInfo("保存月薪失败")
+            }
+        }
+        //弹窗-设置月薪弹窗
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .center
+        config.duration = .forever
+        config.dimMode = .blur(style: UIBlurEffect.Style.dark, alpha: 0.8, interactive: true)
+        config.presentationContext = .window(windowLevel: .statusBar)
+        
+        SwiftMessages.show(config:config, view: salaryPopView)
+        salaryPopView.snp.makeConstraints { (maker) in
+            maker.width.height.equalTo(335)
+        }
+    }
 
     var confirmEvent: ((_ salaryValue:Int )->Void)?
     

@@ -9,6 +9,7 @@
 import UIKit
 import DLLocalNotifications
 import UserNotifications
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         scheduler.scheduleNotification(notification: nightNotification)
         scheduler.scheduleAllNotifications()
         
+        // Register
+        registerCocoaLumberjack()
+        
         return true
     }
 
@@ -51,6 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
     }
 
+    private func registerCocoaLumberjack() {
+        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
+        
+        let fileLogger: DDFileLogger = DDFileLogger() // File Logger
+        fileLogger.rollingFrequency = 60 * 60 * 24 // 24 hours
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.add(fileLogger)
+    }
 
 }
 

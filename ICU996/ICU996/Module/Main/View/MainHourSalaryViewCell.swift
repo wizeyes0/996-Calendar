@@ -49,7 +49,7 @@ class MainHourSalaryViewCell: UICollectionViewCell {
 class MainHourSalaryViewCellModel: NSObject {
     
     private(set) var hourSalaryViewModel: IcuHourSalaryViewModel
-    
+
     init(hourSalaryViewModel: IcuHourSalaryViewModel) {
         self.hourSalaryViewModel = hourSalaryViewModel
         super.init()
