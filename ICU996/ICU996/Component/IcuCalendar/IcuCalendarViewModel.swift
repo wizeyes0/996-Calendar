@@ -51,7 +51,7 @@ class IcuCalendarViewModel: NSObject {
         else {
             let timeRes = IcuDateHelper.shared.getHourAndMinute()
             let hour = timeRes.0
-            if hour < 9 || hour >= 17 {
+            if hour < 9 || hour >= 18 {
                 doText = "不上"
                 reasonText = "已经进入下班时间"
             } else {

@@ -98,7 +98,14 @@ class IcuCalendarView: UIView {
         bakView.addSubview(answerLabel)
         bakView.addSubview(downAnswerLabel)
         bakView.addSubview(quoteLabel)
-        bakView.addSubview(offWorkButton)
+//        bakView.addSubview(offWorkButton)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(heartbeatRefresh), name: .HeartbeatRefresh, object: nil)
+    }
+    
+    @objc private func heartbeatRefresh() {
+        viewModel.updateDatas()
+        updateViews()
     }
     
     private func updateViews() {
@@ -146,11 +153,11 @@ class IcuCalendarView: UIView {
             make.right.equalToSuperview().offset(-20)
         }
         
-        offWorkButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-83)
-            make.height.equalTo(40)
-            make.width.equalTo(200)
-            make.centerX.equalToSuperview()
-        }
+//        offWorkButton.snp.makeConstraints { make in
+//            make.bottom.equalToSuperview().offset(-83)
+//            make.height.equalTo(40)
+//            make.width.equalTo(200)
+//            make.centerX.equalToSuperview()
+//        }
     }
 }

@@ -106,11 +106,17 @@ class IcuHourSalaryView: UIView {
         realHourSalaryDescLabel.isHidden = !viewModel.realHourIsShow
         realHourSalaryLabel.isHidden = !viewModel.realHourIsShow
         
-        switch viewModel.timeType {
-        case .beforework, .work:
-            offWorkButton.isEnabled = false
-            offWorkButton.alpha = 0.5
-        case .offwork:
+        if IcuCacheManager.get.hasSetSalary {
+            switch viewModel.timeType {
+            case .beforework, .work:
+                offWorkButton.isEnabled = false
+                offWorkButton.alpha = 0.5
+            case .offwork:
+                offWorkButton.isEnabled = true
+                offWorkButton.alpha = 1
+            }
+        }
+        else {
             offWorkButton.isEnabled = true
             offWorkButton.alpha = 1
         }
@@ -214,15 +220,7 @@ class IcuHourSalaryViewModel: NSObject {
     
     public func updateDatas() {
         // 处理已经工作时长
-        var timeRes: (Int, Int) = (0, 0)
-        if IcuCacheManager.get.todayIsPunched {
-            if let workoffTime = IcuCacheManager.get.punchTime {
-                timeRes = IcuPunchManager.shared.calcInterval(to: workoffTime)
-            }
-        }
-        else {
-            timeRes = IcuPunchManager.shared.calcInterval(to: Date())
-        }
+        var timeRes: (Int, Int) = IcuPunchManager.shared.calcInterval(to: Date())
         let timeText = formatShowText(timeRes)
         self.timeText = timeText
         
@@ -243,7 +241,10 @@ class IcuHourSalaryViewModel: NSObject {
             buttonShowText = "想看看实际时薪吗？"
         }
         // 未设置金额 结束逻辑
-        if !IcuCacheManager.get.hasSetSalary { return }
+        if !IcuCacheManager.get.hasSetSalary {
+            realHourIsShow = false
+            return
+        }
         
         // 真实时薪数据更新
         /// 未上班情况
@@ -257,12 +258,12 @@ class IcuHourSalaryViewModel: NSObject {
             buttonShowText = "上班中..."
             realHourIsShow = false
             timeType = .work
-            
-            let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
-            let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
-            realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
-            realHourIsShow = true
-            timeType = .offwork
+//
+//            let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
+//            let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
+//            realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
+//            realHourIsShow = true
+//            timeType = .offwork
         }
         /// 下班结算
         else {
@@ -275,7 +276,13 @@ class IcuHourSalaryViewModel: NSObject {
                 let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
                 realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
                 realHourIsShow = true
+
+                // 重新处理工作时长
+                timeRes = IcuPunchManager.shared.calcInterval(to: date)
+                let timeText = formatShowText(timeRes)
+                self.timeText = timeText
                 timeType = .offwork
+                return
             }
             // 未打卡
             else {
