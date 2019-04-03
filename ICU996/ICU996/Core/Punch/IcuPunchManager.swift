@@ -29,14 +29,8 @@ class IcuPunchManager: NSObject {
     /// - Returns: <#return value description#>
     public func offWorkPunch(_ success: (() -> Void) = {},
                              completion: ((Status) -> Void) = { _ in }) {
-        switch status {
-        case .work:
-            // 记录打卡时间
-            IcuCacheManager.get.punchTime = Date()
-            success()
-        default:
-            break
-        }
+        IcuCacheManager.get.punchTime = Date()
+        success()
         completion(self.status)
     }
     

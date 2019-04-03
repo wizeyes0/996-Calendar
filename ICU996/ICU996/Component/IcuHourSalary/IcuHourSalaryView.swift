@@ -167,11 +167,16 @@ class IcuHourSalaryView: UIView {
 extension IcuHourSalaryView {
     @objc private func offWorkButtonAction() {
         if IcuCacheManager.get.hasSetSalary {
-            DDLogDebug("TODO：打卡逻辑")
-            IcuPunchManager.shared.offWorkPunch({
-                DDLogDebug("打开成功")
-            }) { status in
-                self.viewModel = IcuHourSalaryViewModel()
+            if IcuCacheManager.get.todayIsPunched {
+                
+            } else {
+                IcuPunchManager.shared.offWorkPunch({
+                    DDLogDebug("打开成功")
+                }) { status in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.heartbeatRefresh()
+                    }
+                }
             }
         }
         else {
@@ -209,7 +214,15 @@ class IcuHourSalaryViewModel: NSObject {
     
     public func updateDatas() {
         // 处理已经工作时长
-        let timeRes: (Int, Int) = IcuPunchManager.shared.calcInterval(to: Date())
+        var timeRes: (Int, Int) = (0, 0)
+        if IcuCacheManager.get.todayIsPunched {
+            if let workoffTime = IcuCacheManager.get.punchTime {
+                timeRes = IcuPunchManager.shared.calcInterval(to: workoffTime)
+            }
+        }
+        else {
+            timeRes = IcuPunchManager.shared.calcInterval(to: Date())
+        }
         let timeText = formatShowText(timeRes)
         self.timeText = timeText
         
@@ -255,7 +268,10 @@ class IcuHourSalaryViewModel: NSObject {
         else {
             if IcuCacheManager.get.todayIsPunched {
                 buttonShowText = "结算完成"
-                let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
+                guard let date = IcuCacheManager.get.punchTime else {
+                    return
+                }
+                let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: date)
                 let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
                 realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
                 realHourIsShow = true
