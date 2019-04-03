@@ -33,10 +33,21 @@ class IcuCacheManager: NSObject {
         set { Defaults[.hasSetSalary] = newValue }
     }
     
-    /// 打卡状态
-    var punchStatus: Int {
-        get { return Defaults[.currentPunchStatus] }
-        set { Defaults[.currentPunchStatus] = newValue }
+    /// 今日是否打卡
+    var todayIsPunched: Bool {
+        get {
+            if let punchTime = punchTime {
+                let start = punchTime
+                let end = Date()
+                let days = Calendar.current.dateComponents([.day], from: start, to: end).day ?? 0
+                if days > 0 {
+                    self.punchTime = nil
+                    return false
+                }
+                return true
+            }
+            return false
+        }
     }
     
     /// 下班打开时间
@@ -54,9 +65,8 @@ extension DefaultsKeys {
     static let hasSetSalary = DefaultsKey<Bool>("icu.user.info.has.set.salary", defaultValue: false)
 }
 
-// MARK: - 打开记录
+// MARK: - 打卡记录
 extension DefaultsKeys {
-    static let currentPunchStatus = DefaultsKey<Int>("icu.user.punch.status", defaultValue: 2)
     static let currentPunchOffWorkTime = DefaultsKey<Date?>("icu.user.punch.date")
 }
 

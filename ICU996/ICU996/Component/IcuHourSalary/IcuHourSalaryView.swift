@@ -75,7 +75,6 @@ class IcuHourSalaryView: UIView {
     }()
     
     override init(frame: CGRect) {
-//        self.viewModel = IcuCalendarViewModel()
         super.init(frame: frame)
         initialViews()
         initialLayouts()
@@ -93,13 +92,28 @@ class IcuHourSalaryView: UIView {
         addSubview(offWorkButton)
         addSubview(realHourSalaryLabel)
         addSubview(realHourSalaryDescLabel)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(heartbeatRefresh), name: .HeartbeatRefresh, object: nil)
     }
+    
     
     private func updateViews() {
         timeLabel.text = viewModel.timeText
         downTimeLabel.text = viewModel.overTimeText
         offWorkButton.setTitle(viewModel.buttonShowText, for: .normal)
         realHourSalaryLabel.text = viewModel.realHourSalaryText
+        
+        realHourSalaryDescLabel.isHidden = !viewModel.realHourIsShow
+        realHourSalaryLabel.isHidden = !viewModel.realHourIsShow
+        
+        switch viewModel.timeType {
+        case .beforework, .work:
+            offWorkButton.isEnabled = false
+            offWorkButton.alpha = 0.5
+        case .offwork:
+            offWorkButton.isEnabled = true
+            offWorkButton.alpha = 1
+        }
     }
     
     private func initialLayouts() {
@@ -113,7 +127,7 @@ class IcuHourSalaryView: UIView {
         }
         
         timeLabel.snp.makeConstraints { make in
-            make.top.equalTo(upTimeLabel).offset(12)
+            make.top.equalTo(upTimeLabel.snp.bottom).offset(12)
             make.height.equalTo(70)
             make.centerX.equalToSuperview()
         }
@@ -140,6 +154,12 @@ class IcuHourSalaryView: UIView {
             make.right.equalTo(realHourSalaryLabel.snp.left)
         }
     }
+    
+    @objc private func heartbeatRefresh() {
+        DDLogDebug("HourSalary 心跳更新")
+        viewModel.updateDatas()
+        updateViews()
+    }
 }
 
 
@@ -148,6 +168,11 @@ extension IcuHourSalaryView {
     @objc private func offWorkButtonAction() {
         if IcuCacheManager.get.hasSetSalary {
             DDLogDebug("TODO：打卡逻辑")
+            IcuPunchManager.shared.offWorkPunch({
+                DDLogDebug("打开成功")
+            }) { status in
+                self.viewModel = IcuHourSalaryViewModel()
+            }
         }
         else {
             IcuPopView.show()
@@ -157,10 +182,21 @@ extension IcuHourSalaryView {
 
 class IcuHourSalaryViewModel: NSObject {
     
+    enum TimeType {
+        case beforework
+        case work
+        case offwork
+    }
+    
+    private(set) var timeType: TimeType = .beforework
+
     private(set) var timeText: String = ""
     private(set) var overTimeText: String = ""
     private(set) var buttonShowText: String = ""
     private(set) var realHourSalaryText: String = ""
+    
+    private(set) var realHourIsShow: Bool = true
+    private(set) var subtractIsShow: Bool = false
 
     override init() {
         super.init()
@@ -189,17 +225,51 @@ class IcuHourSalaryViewModel: NSObject {
         
         // 时薪模块
         if IcuCacheManager.get.hasSetSalary {
-            DDLogDebug("展示打开，计算时薪")
             buttonShowText = "下班结算"
         } else {
             buttonShowText = "想看看实际时薪吗？"
         }
+        // 未设置金额 结束逻辑
+        if !IcuCacheManager.get.hasSetSalary { return }
         
         // 真实时薪数据更新
-        if IcuCacheManager.get.hasSetSalary {
+        /// 未上班情况
+        if currentHour < 9 {
+            buttonShowText = "还未上班哦"
+            realHourIsShow = false
+            timeType = .beforework
+        }
+        /// 上班过程中
+        else if currentHour >= 9 && currentHour < 18 {
+            buttonShowText = "上班中..."
+            realHourIsShow = false
+            timeType = .work
+            
             let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
             let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
             realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
+            realHourIsShow = true
+            timeType = .offwork
+        }
+        /// 下班结算
+        else {
+            if IcuCacheManager.get.todayIsPunched {
+                buttonShowText = "结算完成"
+                let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
+                let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
+                realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
+                realHourIsShow = true
+                timeType = .offwork
+            }
+            // 未打卡
+            else {
+                buttonShowText = "下班结算"
+                let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
+                let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
+                realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
+                realHourIsShow = true
+                timeType = .offwork
+            }
         }
     }
     

@@ -122,7 +122,7 @@ extension IcuTabView {
         let ori = lightLineView.frame
         
         if let anim = POPSpringAnimation.init(propertyNamed: kPOPViewFrame) {
-            anim.toValue = CGRect(x: sol.frame.minX + (type == .hourSalary ? 4 : 8),
+            anim.toValue = CGRect(x: sol.frame.minX + 8,
                                   y: ori.minY,
                                   width: ori.width,
                                   height: ori.height)

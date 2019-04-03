@@ -37,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Register
         registerCocoaLumberjack()
         
+        // 启动心跳
+        startUpHeartBeat()
+        
         return true
     }
 
@@ -62,6 +65,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fileLogger.rollingFrequency = 60 * 60 * 24 // 24 hours
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.add(fileLogger)
+    }
+    
+    private func startUpHeartBeat() {
+        IcuHeartbeatManager.shared.startTimer()
     }
 
 }

@@ -17,14 +17,14 @@ class OurAppCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         icon.layer.masksToBounds = false
-        icon.layer.cornerRadius = 20
+        icon.layer.cornerRadius = 4
         let shadowColor = UIColor(red: 121, green: 121, blue: 121)
         icon.layer.applySketchShadow(color: shadowColor,
-                                      alpha: 0.5,
-                                      x: 0,
-                                      y: 2,
-                                      blur: 10,
-                                      spread: 0)
+                                     alpha: 0.5,
+                                     x: 0,
+                                     y: 2,
+                                     blur: 10,
+                                     spread: 0)
     }
 
     func setInfo(_ dict: [String: String]) {

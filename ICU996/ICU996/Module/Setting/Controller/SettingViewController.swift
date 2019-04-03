@@ -25,7 +25,7 @@ class SettingViewController: UIViewController {
                 ["title": "关于我们","icon":"aboutus"]
             ],
             [
-                ["title": "Sepicat","icon":"Sepicat","desc":"最棒github客户端","appId":"1355383210"],
+                ["title": "Sepicat","icon":"Sepicat","desc":"最棒的GitHub三方客户端","appId":"1355383210"],
                 ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":"1439448960"],
                 ["title": "小时钟","icon":"littleClock","desc":"全屏数字翻页时钟","appId":"1455066494"],
                 ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":"1441902045"],
@@ -41,7 +41,7 @@ class SettingViewController: UIViewController {
     }()
     
     private lazy var headerTitle: Array = {
-        return ["功能","关于","独立开发者们的作品"]
+        return ["功能","关于","965的独立开发作品"]
     }()
     
     // 懒加载TableView
@@ -128,7 +128,6 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
-    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

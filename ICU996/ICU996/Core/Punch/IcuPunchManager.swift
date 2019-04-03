@@ -20,14 +20,7 @@ class IcuPunchManager: NSObject {
     
     var status: Status {
         get {
-            let current = IcuCacheManager.get.punchStatus
-            if current == 1 {
-                return .work
-            }
-            else if current == 2 {
-                return .rest
-            }
-            return .unknown
+            return IcuCacheManager.get.todayIsPunched ? .rest : .work
         }
     }
     
@@ -38,8 +31,6 @@ class IcuPunchManager: NSObject {
                              completion: ((Status) -> Void) = { _ in }) {
         switch status {
         case .work:
-            // 记录打卡状态
-            IcuCacheManager.get.punchStatus = Status.rest.rawValue
             // 记录打卡时间
             IcuCacheManager.get.punchTime = Date()
             success()

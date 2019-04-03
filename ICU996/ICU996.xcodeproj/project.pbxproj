@@ -42,6 +42,8 @@
 		84C7C9DD225082BA0088F501 /* MainCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9DC225082BA0088F501 /* MainCalendarViewCell.swift */; };
 		84C7C9E02252EF510088F501 /* IcuPunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9DF2252EF510088F501 /* IcuPunchManager.swift */; };
 		84C7C9E22252F8270088F501 /* IcuPunchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9E12252F8270088F501 /* IcuPunchTest.swift */; };
+		84CAD4DD22547C8D00D257B3 /* IcuHeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD4DC22547C8D00D257B3 /* IcuHeartbeatManager.swift */; };
+		84CAD4E022547F3A00D257B3 /* NotificationNameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD4DF22547F3A00D257B3 /* NotificationNameCenter.swift */; };
 		84D624B1224C833E007E397D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D624B0224C833E007E397D /* AppDelegate.swift */; };
 		84D624B6224C833E007E397D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B4224C833E007E397D /* Main.storyboard */; };
 		84D624B8224C8340007E397D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B7224C8340007E397D /* Assets.xcassets */; };
@@ -98,6 +100,8 @@
 		84C7C9DC225082BA0088F501 /* MainCalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarViewCell.swift; sourceTree = "<group>"; };
 		84C7C9DF2252EF510088F501 /* IcuPunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuPunchManager.swift; sourceTree = "<group>"; };
 		84C7C9E12252F8270088F501 /* IcuPunchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuPunchTest.swift; sourceTree = "<group>"; };
+		84CAD4DC22547C8D00D257B3 /* IcuHeartbeatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeartbeatManager.swift; sourceTree = "<group>"; };
+		84CAD4DF22547F3A00D257B3 /* NotificationNameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameCenter.swift; sourceTree = "<group>"; };
 		84D624AD224C833E007E397D /* ICU996.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICU996.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D624B0224C833E007E397D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D624B5224C833E007E397D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,9 +183,9 @@
 		8493C8A8224E53CE00D28C22 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				8493C8B4224E63DC00D28C22 /* IcuTabber */,
 				8493C8CA22525DA600D28C22 /* IcuHourSalary */,
 				8493C8B7224E669800D28C22 /* IcuCalendar */,
-				8493C8B4224E63DC00D28C22 /* IcuTabber */,
 				8493C8AB224E53EE00D28C22 /* IcuHeader */,
 				1EAD689C2251152E004A16BD /* IcuPopView */,
 			);
@@ -217,6 +221,8 @@
 		8493C8BA224E6CA700D28C22 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				84CAD4DE22547E5300D257B3 /* Notification */,
+				84CAD4DB22547C6900D257B3 /* Heartbeat */,
 				84C7C9DE2252EF260088F501 /* Punch */,
 				8493C8BE224E6DF700D28C22 /* Cache */,
 				8493C8BD224E6DD500D28C22 /* Date */,
@@ -358,6 +364,22 @@
 				84C7C9DF2252EF510088F501 /* IcuPunchManager.swift */,
 			);
 			path = Punch;
+			sourceTree = "<group>";
+		};
+		84CAD4DB22547C6900D257B3 /* Heartbeat */ = {
+			isa = PBXGroup;
+			children = (
+				84CAD4DC22547C8D00D257B3 /* IcuHeartbeatManager.swift */,
+			);
+			path = Heartbeat;
+			sourceTree = "<group>";
+		};
+		84CAD4DE22547E5300D257B3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				84CAD4DF22547F3A00D257B3 /* NotificationNameCenter.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		84D624A4224C833E007E397D = {
@@ -652,6 +674,7 @@
 			files = (
 				1E39E1D9224E5EE500BA4EFA /* ICUStartViewController.swift in Sources */,
 				84C7C9E02252EF510088F501 /* IcuPunchManager.swift in Sources */,
+				84CAD4DD22547C8D00D257B3 /* IcuHeartbeatManager.swift in Sources */,
 				8493C8C0224E6ED500D28C22 /* IcuCacheManager.swift in Sources */,
 				1EAD689B22511525004A16BD /* IcuPopView.swift in Sources */,
 				84D624B1224C833E007E397D /* AppDelegate.swift in Sources */,
@@ -661,6 +684,7 @@
 				84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
+				84CAD4E022547F3A00D257B3 /* NotificationNameCenter.swift in Sources */,
 				8493C8CE225273AC00D28C22 /* MainHourSalaryViewCell.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
 				84C7C9DA225057D80088F501 /* CALayer+.swift in Sources */,
@@ -844,7 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZG7HSB6RX;
+				DEVELOPMENT_TEAM = DNL5G5M9A8;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -865,7 +889,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZZG7HSB6RX;
+				DEVELOPMENT_TEAM = DNL5G5M9A8;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
