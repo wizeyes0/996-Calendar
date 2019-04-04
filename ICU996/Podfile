@@ -18,6 +18,7 @@ def ui_component
   pod 'pop', '~> 1.0.12'
   pod 'AZCategory'
   pod 'SwiftMessages'
+  pod 'LTMorphingLabel', '~> 0.7.0'
 end
 
 def buz_component

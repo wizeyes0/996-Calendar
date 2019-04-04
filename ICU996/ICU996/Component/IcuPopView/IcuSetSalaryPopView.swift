@@ -10,10 +10,10 @@ import UIKit
 import SwiftMessages
 import CocoaLumberjack
 
-class IcuPopView: UIView {
+class IcuSetSalaryPopView: UIView {
     
     static public func show() {
-        let salaryPopView = IcuPopView()
+        let salaryPopView = IcuSetSalaryPopView()
         salaryPopView.confirmEvent = { salary in
             SwiftMessages.hideAll()
             // 保存月薪值
@@ -37,7 +37,7 @@ class IcuPopView: UIView {
         
         SwiftMessages.show(config:config, view: salaryPopView)
         salaryPopView.snp.makeConstraints { (maker) in
-            maker.width.height.equalTo(335)
+            maker.height.equalTo(335)
         }
     }
 
@@ -166,7 +166,7 @@ class IcuPopView: UIView {
     }
 }
 
-extension IcuPopView:UITextFieldDelegate {
+extension IcuSetSalaryPopView:UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

@@ -8,6 +8,7 @@
 
 import UIKit
 import CocoaLumberjack
+import LTMorphingLabel
 
 class IcuHourSalaryView: UIView {
     
@@ -31,15 +32,15 @@ class IcuHourSalaryView: UIView {
         return label
     }()
     
-    lazy var timeLabel: UILabel = {
-        let label = UILabel()
+    lazy var timeLabel: LTMorphingLabel = {
+        let label = LTMorphingLabel()
         label.text = "10小时30分"
         label.font = UIFont.icuFont(.medium, size: 50)
         label.textColor = UIColor.highlightColor()
+        label.morphingEffect = .scale
         return label
     }()
-    
-    
+
     lazy var downTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "已经超过额定工时2小时30分。"
@@ -210,7 +211,7 @@ extension IcuHourSalaryView {
             }
         }
         else {
-            IcuPopView.show()
+            IcuSetSalaryPopView.show()
         }
     }
 }
@@ -307,6 +308,11 @@ class IcuHourSalaryViewModel: NSObject {
                 let timeText = formatShowText(timeRes)
                 self.timeText = timeText
                 timeType = .offwork
+                
+                // 处理超时文案
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "已于 HH:mm 完成打开"
+                overTimeText = dateFormatter.string(from: date)
                 return
             }
             // 未打卡

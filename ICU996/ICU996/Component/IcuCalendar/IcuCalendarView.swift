@@ -8,6 +8,8 @@
 
 import UIKit
 import DeviceKit
+import LTMorphingLabel
+import pop
 
 class IcuCalendarView: UIView {
     
@@ -68,9 +70,15 @@ class IcuCalendarView: UIView {
     lazy var quoteLabel: UILabel = {
         let label = UILabel()
         label.text = "劳动法第三十六条：国家实行劳动者每日工作时间不超过八小时、平均每周工作时间不超过四十四小时的工时制度。"
-        label.font = UIFont.icuFont(.regular, size: 11)
+        label.font = UIFont.icuFont(.regular, size: 13)
+        label.textAlignment = .center
         label.textColor = UIColor.quoteColor()
         label.numberOfLines = 0
+        label.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickQuote))
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        label.addGestureRecognizer(tapRecognizer)
         return label
     }()
     
@@ -188,15 +196,26 @@ class IcuCalendarView: UIView {
         quoteLabel.snp.makeConstraints { make in
             make.top.equalTo(downAnswerLabel.snp.bottom).offset(31)
             make.centerX.equalTo(downAnswerLabel)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
+            make.left.equalToSuperview().offset(30)
+            make.right.equalToSuperview().offset(-30)
         }
-
-//        offWorkButton.snp.makeConstraints { make in
-//            make.bottom.equalToSuperview().offset(-83)
-//            make.height.equalTo(40)
-//            make.width.equalTo(200)
-//            make.centerX.equalToSuperview()
-//        }
+    }
+    
+    @objc private func clickQuote() {
+        guard let firstAnim = POPSpringAnimation(propertyNamed: kPOPViewAlpha) else {
+            return
+        }
+        guard let secondAnim = POPSpringAnimation(propertyNamed: kPOPViewAlpha) else {
+            return
+        }
+        firstAnim.fromValue = 1
+        firstAnim.toValue = 0
+        secondAnim.fromValue = 0
+        secondAnim.toValue = 1
+        firstAnim.completionBlock = { _, _ in
+            self.quoteLabel.text = ICUSaying.nightSaying()
+            self.quoteLabel.pop_add(secondAnim, forKey: "alpha2")
+        }
+        quoteLabel.pop_add(firstAnim, forKey: "alpha1")
     }
 }

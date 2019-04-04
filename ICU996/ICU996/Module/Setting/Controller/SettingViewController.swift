@@ -35,8 +35,8 @@ class SettingViewController: UIViewController {
             ]
         ]
     }()
-    private lazy var salaryPopView: IcuPopView = {
-        let p = IcuPopView()
+    private lazy var salaryPopView: IcuSetSalaryPopView = {
+        let p = IcuSetSalaryPopView()
         return p
     }()
     
@@ -143,7 +143,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            IcuPopView.show()
+            IcuSetSalaryPopView.show()
         case 1:
             if (indexPath.row == 0) {
                 let privacyVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PrivacyViewController")
