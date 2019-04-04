@@ -250,6 +250,7 @@ class IcuHourSalaryViewModel: NSObject {
         /// 未上班情况
         if currentHour < 9 {
             buttonShowText = "还未上班哦"
+            self.timeText = "0分钟"
             realHourIsShow = false
             timeType = .beforework
         }
