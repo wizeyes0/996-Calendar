@@ -44,9 +44,14 @@ class ICUFeedbackViewController: UIViewController  {
         feedbackButton.setGradientShadow()
         rateButton.setGradientShadow()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
     @IBAction func closeButtonClickedAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func feedbackButtonClickedAction(_ sender: Any) {

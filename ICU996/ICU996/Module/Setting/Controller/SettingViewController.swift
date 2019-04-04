@@ -60,8 +60,13 @@ class SettingViewController: UIViewController {
         self.navigationItem.title = "设置"
         tableView.backgroundColor = UIColor(red: 247, green: 247, blue: 247)
         let leftBtn = UIBarButtonItem(image: UIImage(named: "close"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(close))
-        self.navigationItem.rightBarButtonItem = leftBtn
+        self.navigationItem.leftBarButtonItem = leftBtn
         self.view.addSubview(self.tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @objc func close() {
@@ -141,13 +146,13 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         case 1:
             if (indexPath.row == 0) {
                 let privacyVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PrivacyViewController")
-                self.present(privacyVc, animated: true, completion: nil)
+                navigationController?.pushViewController(privacyVc, animated: true)
             } else if (indexPath.row == 1) {
                 shareApp()
             }  else if (indexPath.row == 2) {
                 //
                 let feedbackVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ICUFeedbackViewController")
-                self.present(feedbackVc, animated: true, completion: nil)
+                navigationController?.pushViewController(feedbackVc, animated: true)
             }
         case 2:
             openApp(dict["appId"]!)
