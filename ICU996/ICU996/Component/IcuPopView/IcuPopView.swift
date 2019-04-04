@@ -30,7 +30,9 @@ class IcuPopView: UIView {
         var config = SwiftMessages.Config()
         config.presentationStyle = .center
         config.duration = .forever
-        config.dimMode = .blur(style: UIBlurEffect.Style.dark, alpha: 0.8, interactive: true)
+        config.dimMode = .blur(style: UIBlurEffect.Style.dark,
+                               alpha: 0.3,
+                               interactive: true)
         config.presentationContext = .window(windowLevel: .statusBar)
         
         SwiftMessages.show(config:config, view: salaryPopView)

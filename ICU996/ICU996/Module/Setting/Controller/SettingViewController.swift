@@ -67,6 +67,7 @@ class SettingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     @objc func close() {
