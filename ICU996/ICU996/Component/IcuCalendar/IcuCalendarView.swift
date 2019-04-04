@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DeviceKit
 
 class IcuCalendarView: UIView {
     
@@ -79,6 +80,18 @@ class IcuCalendarView: UIView {
         return button
     }()
     
+    lazy var fromQuoteImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "calendar-quote-from"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    lazy var toQuoteImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "calendar-quote-to"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         self.viewModel = IcuCalendarViewModel()
         super.init(frame: frame)
@@ -98,7 +111,8 @@ class IcuCalendarView: UIView {
         bakView.addSubview(answerLabel)
         bakView.addSubview(downAnswerLabel)
         bakView.addSubview(quoteLabel)
-//        bakView.addSubview(offWorkButton)
+        bakView.addSubview(fromQuoteImageView)
+        bakView.addSubview(toQuoteImageView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(heartbeatRefresh), name: .HeartbeatRefresh, object: nil)
     }
@@ -116,25 +130,45 @@ class IcuCalendarView: UIView {
     }
     
     private func initialLayouts() {
+        let device = Device()
+        
+        var _4inches: [Device] = [.iPhone5, .iPhone5s, .iPhoneSE, .iPhone4]
+        for i in _4inches {
+            _4inches.append(.simulator(i))
+        }
+        
         bakView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
         dateLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
+            if device.isOneOf(_4inches) {
+                make.top.equalToSuperview().offset(3)
+            } else {
+                make.top.equalToSuperview().offset(15)
+            }
             make.left.equalToSuperview().offset(20)
         }
         
         weekdayLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-20)
-            make.top.equalToSuperview().offset(26)
+            make.top.equalTo(dateLabel)
         }
         
         upAnswerLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(118)
+            if device.isOneOf(_4inches) {
+                make.top.equalToSuperview().offset(50)
+            } else {
+                make.top.equalToSuperview().offset(118)
+            }
             make.centerX.equalToSuperview()
         }
         
+        fromQuoteImageView.snp.makeConstraints { make in
+            make.right.equalTo(upAnswerLabel.snp.left).offset(-6)
+            make.bottom.equalTo(upAnswerLabel.snp.centerY)
+        }
+
         answerLabel.snp.makeConstraints { make in
             make.top.equalTo(upAnswerLabel.snp.bottom).offset(12)
             make.height.equalTo(154)
@@ -146,13 +180,18 @@ class IcuCalendarView: UIView {
             make.centerX.equalTo(answerLabel)
         }
         
+        toQuoteImageView.snp.makeConstraints { make in
+            make.left.equalTo(downAnswerLabel.snp.right).offset(6)
+            make.bottom.equalTo(downAnswerLabel.snp.centerY)
+        }
+        
         quoteLabel.snp.makeConstraints { make in
             make.top.equalTo(downAnswerLabel.snp.bottom).offset(31)
             make.centerX.equalTo(downAnswerLabel)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         }
-        
+
 //        offWorkButton.snp.makeConstraints { make in
 //            make.bottom.equalToSuperview().offset(-83)
 //            make.height.equalTo(40)

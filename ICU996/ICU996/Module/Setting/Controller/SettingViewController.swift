@@ -137,7 +137,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            setSalary()
+            IcuPopView.show()
         case 1:
             if (indexPath.row == 0) {
                 let privacyVc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PrivacyViewController")
@@ -159,26 +159,6 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SettingViewController {
-    func setSalary() {
-        salaryPopView.confirmEvent = { salary in
-            SwiftMessages.hideAll()
-            //保存月薪值
-            IcuCacheManager.get.usersalary = salary
-        }
-        //弹窗-设置月薪弹窗
-        var config = SwiftMessages.Config()
-        config.presentationStyle = .center
-        config.duration = .forever
-        config.dimMode = .blur(style: UIBlurEffect.Style.dark, alpha: 0.8, interactive: true)
-        config.presentationContext = .window(windowLevel: .statusBar)
-
-        SwiftMessages.show(config:config, view: salaryPopView)
-        salaryPopView.snp.makeConstraints { (maker) in
-            maker.width.height.equalTo(335)
-        }
-        
-    }
-    
     func shareApp() {
         var items = Array<Any>()
         items.append("ICU日历 - 注意身体别再996啦")

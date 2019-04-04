@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.itemSize = CGSize(width: self.view.frame.width,
-                                 height: self.view.frame.height - 254)
+                                 height: self.view.frame.height - 200)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

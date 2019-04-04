@@ -25,7 +25,7 @@ class IcuHourSalaryView: UIView {
     
     lazy var upTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "今天已工作："
+        label.text = "今天已工作"
         label.font = UIFont.icuFont(.medium, size: 13)
         label.textColor = UIColor.showColor()
         return label
@@ -74,6 +74,18 @@ class IcuHourSalaryView: UIView {
         return label
     }()
     
+    lazy var fromQuoteImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "calendar-quote-from"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    lazy var toQuoteImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "calendar-quote-to"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialViews()
@@ -92,6 +104,8 @@ class IcuHourSalaryView: UIView {
         addSubview(offWorkButton)
         addSubview(realHourSalaryLabel)
         addSubview(realHourSalaryDescLabel)
+        addSubview(fromQuoteImageView)
+        addSubview(toQuoteImageView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(heartbeatRefresh), name: .HeartbeatRefresh, object: nil)
     }
@@ -132,6 +146,11 @@ class IcuHourSalaryView: UIView {
             make.centerX.equalToSuperview()
         }
         
+        fromQuoteImageView.snp.makeConstraints { make in
+            make.right.equalTo(upTimeLabel.snp.left).offset(-6)
+            make.bottom.equalTo(upTimeLabel.snp.centerY)
+        }
+        
         timeLabel.snp.makeConstraints { make in
             make.top.equalTo(upTimeLabel.snp.bottom).offset(12)
             make.height.equalTo(70)
@@ -141,6 +160,11 @@ class IcuHourSalaryView: UIView {
         downTimeLabel.snp.makeConstraints { make in
             make.top.equalTo(timeLabel.snp.bottom).offset(12)
             make.centerX.equalToSuperview()
+        }
+        
+        toQuoteImageView.snp.makeConstraints { make in
+            make.left.equalTo(downTimeLabel.snp.right).offset(6)
+            make.bottom.equalTo(downTimeLabel.snp.centerY)
         }
         
         offWorkButton.snp.makeConstraints { make in
@@ -162,7 +186,7 @@ class IcuHourSalaryView: UIView {
     }
     
     @objc private func heartbeatRefresh() {
-        DDLogDebug("HourSalary 心跳更新")
+//        DDLogDebug("HourSalary 心跳更新")
         viewModel.updateDatas()
         updateViews()
     }

@@ -72,6 +72,12 @@ class IcuPopView: UIView {
         return btn
     }()
     
+    private var salaryLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.icuFont(.regular, size: 13)
+        return label
+    }()
+    
     private var descLabel: UILabel = {
         let label = UILabel()
         label.text = "我们承诺：不会上传一切隐私敏感信息，所有隐私敏感的操作均未涉及到网络连接，请放心使用。"
@@ -98,6 +104,13 @@ class IcuPopView: UIView {
         backView.addSubview(textField)
         backView.addSubview(confirmBtn)
         backView.addSubview(descLabel)
+        backView.addSubview(salaryLabel)
+        
+        if IcuCacheManager.get.hasSetSalary, let salary = IcuCacheManager.get.usersalary {
+            salaryLabel.text = "已经设置月薪￥\(salary)"
+        } else {
+            salaryLabel.text = ""
+        }
     }
     
     private func initialLayouts() {
@@ -126,6 +139,11 @@ class IcuPopView: UIView {
             maker.centerX.equalToSuperview()
             maker.width.equalTo(200)
             maker.height.equalTo(40)
+        }
+        
+        salaryLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(confirmBtn)
+            make.top.equalTo(confirmBtn.snp.bottom).offset(30)
         }
         
         descLabel.snp.makeConstraints { (maker) in
