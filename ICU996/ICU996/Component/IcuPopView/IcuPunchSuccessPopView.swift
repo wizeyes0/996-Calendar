@@ -1,0 +1,23 @@
+//
+//  IcuPunchSuccessPopView.swift
+//  ICU996
+//
+//  Created by Harry Duan on 2019/4/4.
+//  Copyright © 2019 Harry Duan. All rights reserved.
+//
+
+import UIKit
+import SwiftMessages
+import CocoaLumberjack
+
+class IcuPunchSuccessPopView: UIView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
+}

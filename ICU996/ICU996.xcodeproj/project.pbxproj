@@ -44,6 +44,9 @@
 		84C7C9E22252F8270088F501 /* IcuPunchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7C9E12252F8270088F501 /* IcuPunchTest.swift */; };
 		84CAD4DD22547C8D00D257B3 /* IcuHeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD4DC22547C8D00D257B3 /* IcuHeartbeatManager.swift */; };
 		84CAD4E022547F3A00D257B3 /* NotificationNameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD4DF22547F3A00D257B3 /* NotificationNameCenter.swift */; };
+		84CAD5022256251700D257B3 /* IcuLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD5012256251700D257B3 /* IcuLabel.swift */; };
+		84CAD50422562BC900D257B3 /* IcuPunchSuccessPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CAD50322562BC900D257B3 /* IcuPunchSuccessPopView.swift */; };
+		84CAD50722562CB000D257B3 /* star-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 84CAD50622562CB000D257B3 /* star-success.json */; };
 		84D624B1224C833E007E397D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D624B0224C833E007E397D /* AppDelegate.swift */; };
 		84D624B6224C833E007E397D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B4224C833E007E397D /* Main.storyboard */; };
 		84D624B8224C8340007E397D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D624B7224C8340007E397D /* Assets.xcassets */; };
@@ -102,6 +105,9 @@
 		84C7C9E12252F8270088F501 /* IcuPunchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuPunchTest.swift; sourceTree = "<group>"; };
 		84CAD4DC22547C8D00D257B3 /* IcuHeartbeatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeartbeatManager.swift; sourceTree = "<group>"; };
 		84CAD4DF22547F3A00D257B3 /* NotificationNameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameCenter.swift; sourceTree = "<group>"; };
+		84CAD5012256251700D257B3 /* IcuLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuLabel.swift; sourceTree = "<group>"; };
+		84CAD50322562BC900D257B3 /* IcuPunchSuccessPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuPunchSuccessPopView.swift; sourceTree = "<group>"; };
+		84CAD50622562CB000D257B3 /* star-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "star-success.json"; sourceTree = "<group>"; };
 		84D624AD224C833E007E397D /* ICU996.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICU996.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D624B0224C833E007E397D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D624B5224C833E007E397D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1EAD689A22511525004A16BD /* IcuSetSalaryPopView.swift */,
+				84CAD50322562BC900D257B3 /* IcuPunchSuccessPopView.swift */,
 			);
 			path = IcuPopView;
 			sourceTree = "<group>";
@@ -258,6 +265,7 @@
 		8493C8C6224FCEFE00D28C22 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				84CAD50522562CA500D257B3 /* Lottie */,
 				8493C8C7224FCF0E00D28C22 /* Work */,
 			);
 			path = Data;
@@ -300,6 +308,7 @@
 				84C7C9D9225057D80088F501 /* CALayer+.swift */,
 				514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */,
 				514C8EC92250A36900C52DB7 /* UIButton+factory.swift */,
+				84CAD5012256251700D257B3 /* IcuLabel.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -380,6 +389,14 @@
 				84CAD4DF22547F3A00D257B3 /* NotificationNameCenter.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		84CAD50522562CA500D257B3 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				84CAD50622562CB000D257B3 /* star-success.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		84D624A4224C833E007E397D = {
@@ -532,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D624BB224C8340007E397D /* LaunchScreen.storyboard in Resources */,
+				84CAD50722562CB000D257B3 /* star-success.json in Resources */,
 				84D624B8224C8340007E397D /* Assets.xcassets in Resources */,
 				8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */,
 				84D624B6224C833E007E397D /* Main.storyboard in Resources */,
@@ -595,6 +613,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -616,6 +635,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +704,8 @@
 				8493C8B6224E63F800D28C22 /* IcuTabView.swift in Sources */,
 				514C8ECA2250A36900C52DB7 /* UIButton+factory.swift in Sources */,
 				84C7C9D822504CEF0088F501 /* UIView+gradient.swift in Sources */,
+				84CAD5022256251700D257B3 /* IcuLabel.swift in Sources */,
+				84CAD50422562BC900D257B3 /* IcuPunchSuccessPopView.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
 				84CAD4E022547F3A00D257B3 /* NotificationNameCenter.swift in Sources */,

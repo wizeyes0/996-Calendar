@@ -19,6 +19,7 @@ def ui_component
   pod 'AZCategory'
   pod 'SwiftMessages'
   pod 'LTMorphingLabel', '~> 0.7.0'
+  pod 'lottie-ios', '~> 3.0.3'
 end
 
 def buz_component

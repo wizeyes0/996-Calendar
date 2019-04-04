@@ -57,21 +57,23 @@ class IcuHourSalaryView: UIView {
         return button
     }()
     
-    lazy var realHourSalaryDescLabel: UILabel = {
-        let label = UILabel()
+    lazy var realHourSalaryDescLabel: IcuLabel = {
+        let label = IcuLabel()
         label.text = "今日实际时薪："
         label.textAlignment = .right
         label.font = UIFont.icuFont(.medium, size: 13)
         label.textColor = UIColor.showColor()
+        label.edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return label
     }()
     
-    lazy var realHourSalaryLabel: UILabel = {
-        let label = UILabel()
+    lazy var realHourSalaryLabel: IcuLabel = {
+        let label = IcuLabel()
         label.text = "￥ 80.00"
         label.textAlignment = .left
         label.font = UIFont.icuFont(.medium, size: 28)
         label.textColor = UIColor.highlightColor()
+        label.edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return label
     }()
     
@@ -176,12 +178,12 @@ class IcuHourSalaryView: UIView {
         }
         
         realHourSalaryLabel.snp.makeConstraints { make in
-            make.top.equalTo(offWorkButton.snp.bottom).offset(32)
+            make.top.equalTo(offWorkButton.snp.bottom).offset(36)
             make.left.equalTo(self.snp.centerX)
         }
         
         realHourSalaryDescLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(realHourSalaryLabel)
+            make.bottom.equalTo(realHourSalaryLabel).offset(-6)
             make.right.equalTo(realHourSalaryLabel.snp.left)
         }
     }
@@ -284,12 +286,6 @@ class IcuHourSalaryViewModel: NSObject {
             buttonShowText = "上班中..."
             realHourIsShow = false
             timeType = .work
-//
-//            let hour: CGFloat = IcuPunchManager.shared.calcInterval(to: Date())
-//            let hourSalary: CGFloat = IcuPunchManager.shared.calcHourSalary(hour)
-//            realHourSalaryText = "￥" + String(format: "%.2f", hourSalary)
-//            realHourIsShow = true
-//            timeType = .offwork
         }
         /// 下班结算
         else {
@@ -311,7 +307,7 @@ class IcuHourSalaryViewModel: NSObject {
                 
                 // 处理超时文案
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "已于 HH:mm 完成打开"
+                dateFormatter.dateFormat = "已于 HH:mm 完成打卡"
                 overTimeText = dateFormatter.string(from: date)
                 return
             }

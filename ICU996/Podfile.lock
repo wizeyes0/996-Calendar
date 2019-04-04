@@ -17,6 +17,7 @@ PODS:
   - DLLocalNotifications (0.07)
   - FLEX (2.4.0)
   - KVOController (1.2.0)
+  - lottie-ios (3.0.3)
   - LTMorphingLabel (0.7.0)
   - Nimble (8.0.1)
   - ObjectMapper (3.4.2)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - DLLocalNotifications (~> 0.07)
   - FLEX (~> 2.0)
   - KVOController (~> 1.2)
+  - lottie-ios (~> 3.0.3)
   - LTMorphingLabel (~> 0.7.0)
   - Nimble (~> 8.0.0)
   - pop (~> 1.0.12)
@@ -59,6 +61,7 @@ SPEC REPOS:
     - DLLocalNotifications
     - FLEX
     - KVOController
+    - lottie-ios
     - LTMorphingLabel
     - Nimble
     - ObjectMapper
@@ -81,6 +84,7 @@ SPEC CHECKSUMS:
   DLLocalNotifications: 5d358a73284efab757b4a4c07f3e5987b8afcef5
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -91,6 +95,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
   SwiftyUserDefaults: 39ec70433f22f3052a64bc5fbfb34f46932b8bf1
 
-PODFILE CHECKSUM: 2aea5edd37337ed06b8df812da3785b4ea282363
+PODFILE CHECKSUM: 9327683736e772f59365333b181d112dd063b94a
 
 COCOAPODS: 1.6.1
