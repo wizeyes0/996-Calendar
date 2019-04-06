@@ -199,10 +199,12 @@ class IcuHourSalaryView: UIView {
 // MARK: - Button Action
 extension IcuHourSalaryView {
     @objc private func offWorkButtonAction() {
+        
         if IcuCacheManager.get.hasSetSalary {
             if IcuCacheManager.get.todayIsPunched {
                 
             } else {
+                UIImpactFeedbackGenerator.impactOccurredWithStyleMedium()
                 IcuPunchManager.shared.offWorkPunch({
                     DDLogDebug("打开成功")
                 }) { status in

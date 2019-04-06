@@ -14,6 +14,7 @@
 		1EAD689822510517004A16BD /* OurAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EAD689622510517004A16BD /* OurAppCell.xib */; };
 		1EAD689B22511525004A16BD /* IcuSetSalaryPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD689A22511525004A16BD /* IcuSetSalaryPopView.swift */; };
 		449E9529D3C61B8D8DE6254B /* Pods_ICU996.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB744606DA04C0D8969A71D4 /* Pods_ICU996.framework */; };
+		5148C5A62258B1F300D6098B /* UIImpactFeedbackGenerator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148C5A52258B1F300D6098B /* UIImpactFeedbackGenerator+.swift */; };
 		514C8EC82250A28D00C52DB7 /* UIButton+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */; };
 		514C8ECA2250A36900C52DB7 /* UIButton+factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C8EC92250A36900C52DB7 /* UIButton+factory.swift */; };
 		518DEAFA224F178100D18869 /* ICUFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DEAF9224F178100D18869 /* ICUFeedbackViewController.swift */; };
@@ -74,6 +75,7 @@
 		1ECB6F38224FBB5900DED811 /* ICU996.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICU996.entitlements; sourceTree = "<group>"; };
 		386FB4DD9B66CADCEE971A70 /* Pods_ICU996Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU996Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A55BB2643321A312551C958 /* Pods-ICU996Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5148C5A52258B1F300D6098B /* UIImpactFeedbackGenerator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImpactFeedbackGenerator+.swift"; sourceTree = "<group>"; };
 		514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+gradient.swift"; sourceTree = "<group>"; };
 		514C8EC92250A36900C52DB7 /* UIButton+factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+factory.swift"; sourceTree = "<group>"; };
 		518DEAF9224F178100D18869 /* ICUFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICUFeedbackViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5148C5A72258B36D00D6098B /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				1E39E1DD224E6C0F00BA4EFA /* Saying */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		8493C8A8224E53CE00D28C22 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +303,6 @@
 				1E39E1DC224E6BC900BA4EFA /* Start */,
 				84C7C9D2224C93700088F501 /* Setting */,
 				84C7C9C8224C904B0088F501 /* Main */,
-				1E39E1DD224E6C0F00BA4EFA /* Saying */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -309,6 +318,7 @@
 				514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */,
 				514C8EC92250A36900C52DB7 /* UIButton+factory.swift */,
 				84CAD5012256251700D257B3 /* IcuLabel.swift */,
+				5148C5A52258B1F300D6098B /* UIImpactFeedbackGenerator+.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -423,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				1ECB6F38224FBB5900DED811 /* ICU996.entitlements */,
+				5148C5A72258B36D00D6098B /* Constant */,
 				8493C8C6224FCEFE00D28C22 /* Data */,
 				8493C8BA224E6CA700D28C22 /* Core */,
 				8493C8A8224E53CE00D28C22 /* Component */,
@@ -712,6 +723,7 @@
 				8493C8CE225273AC00D28C22 /* MainHourSalaryViewCell.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
 				84C7C9DA225057D80088F501 /* CALayer+.swift in Sources */,
+				5148C5A62258B1F300D6098B /* UIImpactFeedbackGenerator+.swift in Sources */,
 				1EAD68942250FECD004A16BD /* PrivacyViewController.swift in Sources */,
 				84C7C9CE224C92DF0088F501 /* UIViewController+.swift in Sources */,
 				1EAD689722510517004A16BD /* OurAppCell.swift in Sources */,
@@ -892,7 +904,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNL5G5M9A8;
+				DEVELOPMENT_TEAM = HWM37BW4B9;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -900,7 +912,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996;
+				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996.l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -913,7 +925,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNL5G5M9A8;
+				DEVELOPMENT_TEAM = HWM37BW4B9;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -921,7 +933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996;
+				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996.l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

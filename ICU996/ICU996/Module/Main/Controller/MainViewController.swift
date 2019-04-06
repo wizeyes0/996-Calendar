@@ -127,6 +127,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        UIImpactFeedbackGenerator.impactOccurredWithStyleLight()
         if indexPath.row == 0 {
             tabView.changeToHourSalary()
         } else {
