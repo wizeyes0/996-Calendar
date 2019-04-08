@@ -133,6 +133,7 @@ class IcuHourSalaryView: UIView {
         
         realHourSalaryDescLabel.isHidden = !viewModel.realHourIsShow
         realHourSalaryLabel.isHidden = !viewModel.realHourIsShow
+        upTimeLabel.text = viewModel.timeDescText
         
         if IcuCacheManager.get.hasSetSalary {
             switch viewModel.timeType {
@@ -151,6 +152,10 @@ class IcuHourSalaryView: UIView {
         else {
             offWorkButton.isEnabled = true
             offWorkButton.alpha = 1
+        }
+        
+        if viewModel.timeText == "无需工作" {
+            offWorkButton.alpha = 0
         }
     }
     
@@ -257,6 +262,7 @@ class IcuHourSalaryViewModel: NSObject {
     
     private(set) var timeType: TimeType = .beforework
 
+    private(set) var timeDescText: String = ""
     private(set) var timeText: String = ""
     private(set) var overTimeText: String = ""
     private(set) var buttonShowText: String = ""
@@ -275,6 +281,21 @@ class IcuHourSalaryViewModel: NSObject {
     }
     
     public func updateDatas() {
+        
+        let shouldWorkRes = IcuDateHelper.shared.isHoliday()
+        let shouldWork: Bool = shouldWorkRes.0
+        let info: String = shouldWorkRes.1
+        if !shouldWork {
+            timeDescText = "今天"
+            timeType = .offwork
+            timeText = "无需工作"
+            overTimeText = info
+            realHourIsShow = false
+            subtractIsShow = false
+            return
+        }
+        
+        timeDescText = "今天已工作"
         // 处理已经工作时长
         var timeRes: (Int, Int) = IcuPunchManager.shared.calcInterval(to: Date())
         let timeText = formatShowText(timeRes)

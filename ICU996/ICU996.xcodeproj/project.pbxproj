@@ -616,7 +616,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AZCategory/AZCategory.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
@@ -659,7 +659,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE336774F5EAF6B25599D831 /* [CP] Embed Pods Frameworks */ = {
@@ -670,7 +670,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -681,7 +681,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE54C24FC8FD73C84EDB268E /* [CP] Check Pods Manifest.lock */ = {
@@ -912,7 +912,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DNL5G5M9A8;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -920,7 +920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996.l;
+				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -929,11 +929,11 @@
 		};
 		84D624CC224C8340007E397D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D42323508E0C9A8C9E3A352A /* Pods-ICU996.release.xcconfig */;
+			baseConfigurationReference = 71FE11A126EB0BDF065E5D93 /* Pods-ICU996.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DNL5G5M9A8;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -941,7 +941,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996.l;
+				PRODUCT_BUNDLE_IDENTIFIER = gua.996.ICU996;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -972,7 +972,7 @@
 		};
 		84D624CF224C8340007E397D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7710C4017A59CBE2F42F0203 /* Pods-ICU996Tests.release.xcconfig */;
+			baseConfigurationReference = 86EE023FE2D34456853C6999 /* Pods-ICU996Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -24,6 +24,33 @@ class IcuPunchManager: NSObject {
         }
     }
     
+    /// 当前月实际工作日
+    var realDaysCount: Int {
+        get {
+            // 先获取当前月的天数
+            let daysInCurrentMonth = getDaysInCurrentMonth()
+            // 获取实际工作日
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-"
+            let date = Date()
+            let datePrefix = dateFormatter.string(from: date)
+            var realDaysCount = 0
+            for day in 1...daysInCurrentMonth {
+                var dateString: String = ""
+                if day / 10 <= 0 {
+                    dateString = "\(datePrefix)0\(day)"
+                } else {
+                    dateString = "\(datePrefix)\(day)"
+                }
+                let res = IcuDateHelper.shared.isHoliday(dateString)
+                if res.0 {
+                    realDaysCount += 1
+                }
+            }
+            return realDaysCount
+        }
+    }
+    
     /// 下班打卡 Action
     ///
     /// - Returns: <#return value description#>
@@ -96,10 +123,8 @@ class IcuPunchManager: NSObject {
     /// - Returns: <#return value description#>
     public func calcHourSalary(_ workHours: CGFloat) -> CGFloat {
         if IcuCacheManager.get.hasSetSalary, let mounthSalary = IcuCacheManager.get.usersalary {
-            // 先获取当前月的天数
-            let daysInCurrentMonth = getDaysInCurrentMonth()
             // 日薪
-            let daySalary: CGFloat = CGFloat(mounthSalary) / CGFloat(daysInCurrentMonth)
+            let daySalary: CGFloat = CGFloat(mounthSalary) / CGFloat(self.realDaysCount)
             return daySalary / workHours
         }
         return 0.0

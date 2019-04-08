@@ -14,17 +14,18 @@ class OurAppCell: UITableViewCell {
     @IBOutlet var appname: UILabel!
     @IBOutlet var appDesc: UILabel!
 
+    @IBOutlet weak var iconBackView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        icon.layer.masksToBounds = false
-        icon.layer.cornerRadius = 4
+        icon.layer.cornerRadius = 8
+        icon.layer.masksToBounds = true
         let shadowColor = UIColor(red: 121, green: 121, blue: 121)
-        icon.layer.applySketchShadow(color: shadowColor,
-                                     alpha: 0.5,
-                                     x: 0,
-                                     y: 2,
-                                     blur: 10,
-                                     spread: 0)
+        iconBackView.layer.applySketchShadow(color: shadowColor,
+                                             alpha: 0.5,
+                                             x: 0,
+                                             y: 2,
+                                             blur: 10,
+                                             spread: 0)
     }
 
     func setInfo(_ dict: [String: String]) {
@@ -37,5 +38,4 @@ class OurAppCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
