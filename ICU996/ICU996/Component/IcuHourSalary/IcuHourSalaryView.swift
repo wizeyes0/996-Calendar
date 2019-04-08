@@ -89,6 +89,13 @@ class IcuHourSalaryView: UIView {
         return imageView
     }()
     
+    lazy var testBtn: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Test", for: .normal)
+        button.addTarget(self, action: #selector(test), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialViews()
@@ -101,14 +108,18 @@ class IcuHourSalaryView: UIView {
     
     private func initialViews() {
         addSubview(bakView)
-        addSubview(upTimeLabel)
-        addSubview(timeLabel)
-        addSubview(downTimeLabel)
-        addSubview(offWorkButton)
-        addSubview(realHourSalaryLabel)
-        addSubview(realHourSalaryDescLabel)
-        addSubview(fromQuoteImageView)
-        addSubview(toQuoteImageView)
+        bakView.addSubview(upTimeLabel)
+        bakView.addSubview(timeLabel)
+        bakView.addSubview(downTimeLabel)
+        bakView.addSubview(offWorkButton)
+        bakView.addSubview(realHourSalaryLabel)
+        bakView.addSubview(realHourSalaryDescLabel)
+        bakView.addSubview(fromQuoteImageView)
+        bakView.addSubview(toQuoteImageView)
+        
+        #if DEBUG
+        bakView.addSubview(testBtn)
+        #endif
         
         NotificationCenter.default.addObserver(self, selector: #selector(heartbeatRefresh), name: .HeartbeatRefresh, object: nil)
     }
@@ -130,7 +141,11 @@ class IcuHourSalaryView: UIView {
                 offWorkButton.alpha = 0.5
             case .offwork:
                 offWorkButton.isEnabled = true
-                offWorkButton.alpha = 1
+                if IcuCacheManager.get.todayIsPunched {
+                    offWorkButton.alpha = 0.5
+                } else{
+                    offWorkButton.alpha = 1
+                }
             }
         }
         else {
@@ -186,12 +201,23 @@ class IcuHourSalaryView: UIView {
             make.bottom.equalTo(realHourSalaryLabel).offset(-6)
             make.right.equalTo(realHourSalaryLabel.snp.left)
         }
+        
+        #if DEBUG
+        testBtn.snp.makeConstraints { make in
+            make.top.equalTo(realHourSalaryLabel.snp.bottom).offset(40)
+            make.centerX.equalToSuperview()
+        }
+        #endif
     }
     
     @objc private func heartbeatRefresh() {
 //        DDLogDebug("HourSalary 心跳更新")
         viewModel.updateDatas()
         updateViews()
+    }
+    
+    @objc private func test() {
+        IcuPunchSuccessPopView.show()
     }
 }
 
@@ -206,7 +232,8 @@ extension IcuHourSalaryView {
             } else {
                 UIImpactFeedbackGenerator.impactOccurredWithStyleMedium()
                 IcuPunchManager.shared.offWorkPunch({
-                    DDLogDebug("打开成功")
+                    DDLogDebug("打卡成功")
+                    IcuPunchSuccessPopView.show()
                 }) { status in
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.heartbeatRefresh()
