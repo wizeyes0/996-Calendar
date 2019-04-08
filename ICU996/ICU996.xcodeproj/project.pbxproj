@@ -21,6 +21,10 @@
 		518DEAFC224F1B7F00D18869 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518DEAFB224F1B7F00D18869 /* MessageUI.framework */; };
 		518DEAFE224F1F7800D18869 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DEAFD224F1F7800D18869 /* UIDevice+.swift */; };
 		5292FF641AF9DA2D28E4346D /* Pods_ICU996Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386FB4DD9B66CADCEE971A70 /* Pods_ICU996Tests.framework */; };
+		8443033A225B039400961378 /* sailing.json in Resources */ = {isa = PBXBuildFile; fileRef = 84430339225B039400961378 /* sailing.json */; };
+		8443033C225B03EA00961378 /* IcuSailingPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443033B225B03EA00961378 /* IcuSailingPopView.swift */; };
+		8443033E225B847900961378 /* IcuCalcPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443033D225B847900961378 /* IcuCalcPopView.swift */; };
+		84430340225B869600961378 /* collecting-money.json in Resources */ = {isa = PBXBuildFile; fileRef = 8443033F225B869600961378 /* collecting-money.json */; };
 		8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8AE224E543D00D28C22 /* IcuHeaderView.swift */; };
 		8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8B0224E574A00D28C22 /* UIColor+996.swift */; };
 		8493C8B3224E5A9000D28C22 /* IcuHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493C8B2224E5A9000D28C22 /* IcuHeaderViewModel.swift */; };
@@ -85,6 +89,10 @@
 		5AA85AD781F02E031634A38C /* Pods-ICU996.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.debug.xcconfig"; path = "Target Support Files/Pods-ICU996/Pods-ICU996.debug.xcconfig"; sourceTree = "<group>"; };
 		71FE11A126EB0BDF065E5D93 /* Pods-ICU996.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.release.xcconfig"; path = "Target Support Files/Pods-ICU996/Pods-ICU996.release.xcconfig"; sourceTree = "<group>"; };
 		7710C4017A59CBE2F42F0203 /* Pods-ICU996Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.release.xcconfig"; sourceTree = "<group>"; };
+		84430339225B039400961378 /* sailing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sailing.json; sourceTree = "<group>"; };
+		8443033B225B03EA00961378 /* IcuSailingPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuSailingPopView.swift; sourceTree = "<group>"; };
+		8443033D225B847900961378 /* IcuCalcPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuCalcPopView.swift; sourceTree = "<group>"; };
+		8443033F225B869600961378 /* collecting-money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "collecting-money.json"; sourceTree = "<group>"; };
 		8493C8AE224E543D00D28C22 /* IcuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeaderView.swift; sourceTree = "<group>"; };
 		8493C8B0224E574A00D28C22 /* UIColor+996.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+996.swift"; sourceTree = "<group>"; };
 		8493C8B2224E5A9000D28C22 /* IcuHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -178,6 +186,8 @@
 			children = (
 				1EAD689A22511525004A16BD /* IcuSetSalaryPopView.swift */,
 				84CAD50322562BC900D257B3 /* IcuPunchSuccessPopView.swift */,
+				8443033B225B03EA00961378 /* IcuSailingPopView.swift */,
+				8443033D225B847900961378 /* IcuCalcPopView.swift */,
 			);
 			path = IcuPopView;
 			sourceTree = "<group>";
@@ -412,6 +422,8 @@
 		84CAD50522562CA500D257B3 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				8443033F225B869600961378 /* collecting-money.json */,
+				84430339225B039400961378 /* sailing.json */,
 				84CAD50622562CB000D257B3 /* star-success.json */,
 			);
 			path = Lottie;
@@ -571,7 +583,9 @@
 				84CAD50722562CB000D257B3 /* star-success.json in Resources */,
 				84D624B8224C8340007E397D /* Assets.xcassets in Resources */,
 				8493C8C9224FCF3F00D28C22 /* data_2019.plist in Resources */,
+				8443033A225B039400961378 /* sailing.json in Resources */,
 				84D624B6224C833E007E397D /* Main.storyboard in Resources */,
+				84430340225B869600961378 /* collecting-money.json in Resources */,
 				1EAD689822510517004A16BD /* OurAppCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +741,7 @@
 				84CAD50422562BC900D257B3 /* IcuPunchSuccessPopView.swift in Sources */,
 				84C7C9CA224C90AA0088F501 /* MainViewController.swift in Sources */,
 				8493C8AF224E543D00D28C22 /* IcuHeaderView.swift in Sources */,
+				8443033C225B03EA00961378 /* IcuSailingPopView.swift in Sources */,
 				84CAD4E022547F3A00D257B3 /* NotificationNameCenter.swift in Sources */,
 				8493C8CE225273AC00D28C22 /* MainHourSalaryViewCell.swift in Sources */,
 				8493C8B1224E574A00D28C22 /* UIColor+996.swift in Sources */,
@@ -745,6 +760,7 @@
 				1E39E1DB224E67E300BA4EFA /* ICUSaying.swift in Sources */,
 				84C7C9DD225082BA0088F501 /* MainCalendarViewCell.swift in Sources */,
 				514C8EC82250A28D00C52DB7 /* UIButton+gradient.swift in Sources */,
+				8443033E225B847900961378 /* IcuCalcPopView.swift in Sources */,
 				84C7C9D4224C93820088F501 /* SettingViewController.swift in Sources */,
 				8493C8B9224E66A900D28C22 /* IcuCalendarView.swift in Sources */,
 			);

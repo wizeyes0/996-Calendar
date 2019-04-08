@@ -137,7 +137,10 @@ class IcuHourSalaryView: UIView {
         
         if IcuCacheManager.get.hasSetSalary {
             switch viewModel.timeType {
-            case .beforework, .work:
+            case .work:
+                offWorkButton.isEnabled = true
+                offWorkButton.alpha = 0.5
+            case .beforework:
                 offWorkButton.isEnabled = false
                 offWorkButton.alpha = 0.5
             case .offwork:
@@ -222,7 +225,8 @@ class IcuHourSalaryView: UIView {
     }
     
     @objc private func test() {
-        IcuPunchSuccessPopView.show()
+//        IcuPunchSuccessPopView.show()
+        IcuCalcPopView.show()
     }
 }
 
@@ -232,15 +236,21 @@ extension IcuHourSalaryView {
     @objc private func offWorkButtonAction() {
         
         if IcuCacheManager.get.hasSetSalary {
-            if IcuCacheManager.get.todayIsPunched {
-                
-            } else {
+            if viewModel.timeType == .work {
+                IcuSailingPopView.show()
+                return
+            }
+            else if IcuCacheManager.get.todayIsPunched {
+                DDLogDebug("已经打卡")
+                IcuCalcPopView.show()
+            }
+            else {
                 UIImpactFeedbackGenerator.impactOccurredWithStyleMedium()
                 IcuPunchManager.shared.offWorkPunch({
                     DDLogDebug("打卡成功")
                     IcuPunchSuccessPopView.show()
                 }) { status in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         self.heartbeatRefresh()
                     }
                 }
@@ -327,7 +337,9 @@ class IcuHourSalaryViewModel: NSObject {
         /// 未上班情况
         if currentHour < 9 {
             buttonShowText = "还未上班哦"
-            self.timeText = "0分钟"
+            timeDescText = "今天"
+            self.timeText = "未计时"
+            overTimeText = "无需工作"
             realHourIsShow = false
             timeType = .beforework
         }
