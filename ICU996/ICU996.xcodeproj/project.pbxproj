@@ -74,6 +74,7 @@
 		1EAD689A22511525004A16BD /* IcuSetSalaryPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuSetSalaryPopView.swift; sourceTree = "<group>"; };
 		1ECB6F38224FBB5900DED811 /* ICU996.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICU996.entitlements; sourceTree = "<group>"; };
 		386FB4DD9B66CADCEE971A70 /* Pods_ICU996Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU996Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		396B08531DACAB8BA935FF0D /* Pods-ICU996Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A55BB2643321A312551C958 /* Pods-ICU996Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.debug.xcconfig"; path = "Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5148C5A52258B1F300D6098B /* UIImpactFeedbackGenerator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImpactFeedbackGenerator+.swift"; sourceTree = "<group>"; };
 		514C8EC72250A28D00C52DB7 /* UIButton+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+gradient.swift"; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		518DEAFD224F1F7800D18869 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		5AA85AD781F02E031634A38C /* Pods-ICU996.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.debug.xcconfig"; path = "Target Support Files/Pods-ICU996/Pods-ICU996.debug.xcconfig"; sourceTree = "<group>"; };
 		71FE11A126EB0BDF065E5D93 /* Pods-ICU996.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.release.xcconfig"; path = "Target Support Files/Pods-ICU996/Pods-ICU996.release.xcconfig"; sourceTree = "<group>"; };
+		7710C4017A59CBE2F42F0203 /* Pods-ICU996Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8493C8AE224E543D00D28C22 /* IcuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeaderView.swift; sourceTree = "<group>"; };
 		8493C8B0224E574A00D28C22 /* UIColor+996.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+996.swift"; sourceTree = "<group>"; };
 		8493C8B2224E5A9000D28C22 /* IcuHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcuHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +122,8 @@
 		84D624C5224C8340007E397D /* ICU996Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICU996Tests.swift; sourceTree = "<group>"; };
 		84D624C7224C8340007E397D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86EE023FE2D34456853C6999 /* Pods-ICU996Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996Tests.release.xcconfig"; path = "Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests.release.xcconfig"; sourceTree = "<group>"; };
+		88206EA8D3752B6D5AE7B3CC /* Pods-ICU996.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ICU996/Pods-ICU996.debug.xcconfig"; sourceTree = "<group>"; };
+		D42323508E0C9A8C9E3A352A /* Pods-ICU996.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU996.release.xcconfig"; path = "Pods/Target Support Files/Pods-ICU996/Pods-ICU996.release.xcconfig"; sourceTree = "<group>"; };
 		DB744606DA04C0D8969A71D4 /* Pods_ICU996.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU996.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +189,10 @@
 				71FE11A126EB0BDF065E5D93 /* Pods-ICU996.release.xcconfig */,
 				4A55BB2643321A312551C958 /* Pods-ICU996Tests.debug.xcconfig */,
 				86EE023FE2D34456853C6999 /* Pods-ICU996Tests.release.xcconfig */,
+				88206EA8D3752B6D5AE7B3CC /* Pods-ICU996.debug.xcconfig */,
+				D42323508E0C9A8C9E3A352A /* Pods-ICU996.release.xcconfig */,
+				396B08531DACAB8BA935FF0D /* Pods-ICU996Tests.debug.xcconfig */,
+				7710C4017A59CBE2F42F0203 /* Pods-ICU996Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -608,7 +616,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AZCategory/AZCategory.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
@@ -651,7 +659,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ICU996/Pods-ICU996-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE336774F5EAF6B25599D831 /* [CP] Embed Pods Frameworks */ = {
@@ -662,7 +670,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -673,7 +681,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ICU996Tests/Pods-ICU996Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE54C24FC8FD73C84EDB268E /* [CP] Check Pods Manifest.lock */ = {
@@ -904,7 +912,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNL5G5M9A8;
+				DEVELOPMENT_TEAM = ZZG7HSB6RX;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -921,11 +929,11 @@
 		};
 		84D624CC224C8340007E397D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71FE11A126EB0BDF065E5D93 /* Pods-ICU996.release.xcconfig */;
+			baseConfigurationReference = D42323508E0C9A8C9E3A352A /* Pods-ICU996.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DNL5G5M9A8;
+				DEVELOPMENT_TEAM = ZZG7HSB6RX;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ICU996/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -964,7 +972,7 @@
 		};
 		84D624CF224C8340007E397D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86EE023FE2D34456853C6999 /* Pods-ICU996Tests.release.xcconfig */;
+			baseConfigurationReference = 7710C4017A59CBE2F42F0203 /* Pods-ICU996Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
