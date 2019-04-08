@@ -98,7 +98,7 @@ extension ICUFeedbackViewController {
         let mailComposeVC = MFMailComposeViewController()
         
         mailComposeVC.mailComposeDelegate = self
-        mailComposeVC.setToRecipients(["<你的邮箱地址>"])
+        mailComposeVC.setToRecipients(["gua@desgard.com"])
         mailComposeVC.setSubject("关于996日历的反馈建议")
         mailComposeVC.setMessageBody(self.messageBody(), isHTML: false)
         
