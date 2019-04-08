@@ -25,7 +25,7 @@ class ICUFeedbackViewController: UIViewController  {
         return ["2642643770",//-一楠
                 "desgard",//冬瓜
                 "1619592223",//-寒流
-                "6255309638 ",//-霖
+                "6255309638",//-霖
                 "2158505911",//-油条
                 "1619592223",//-振华
                 "1619592223",//-世杰
@@ -81,7 +81,7 @@ class ICUFeedbackViewController: UIViewController  {
         var weiboId = "1619592223"
         weiboId = weibos[sender.tag]
         
-        let url = URL(string: "https://weibo.com/\(weiboId)?is_all=1")
+        let url = URL(string: "https://weibo.com/u/\(weiboId)?is_all=1")
         
         if UIApplication.shared.canOpenURL(url!) {
             UIApplication.shared.open(url!, options: [UIApplication.OpenExternalURLOptionsKey.universalLinksOnly:"996"]) { success in
