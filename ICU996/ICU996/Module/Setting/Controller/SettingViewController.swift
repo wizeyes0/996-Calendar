@@ -26,10 +26,10 @@ class SettingViewController: UIViewController {
             ],
             [
                 ["title": "Sepicat","icon":"Sepicat","desc":"最棒的GitHub三方客户端","appId":"1355383210"],
-                ["title": "宠物星球","icon":"petplanet","desc":"舔宠聚集地","appId":"1439448960"],
+                ["title": "宠物星球","icon":"petplanet","desc":"分享萌宠学习养宠知识","appId":"1439448960"],
                 ["title": "小时钟","icon":"littleClock","desc":"全屏数字翻页时钟","appId":"1455066494"],
                 ["title": "iSystant Pro","icon":"iSystant","desc":"轻松查看手机硬件信息","appId":"1441902045"],
-                ["title": "Pugword","icon":"pugword","desc":"好看，好用","appId":"1307617053"],
+                ["title": "Pugword","icon":"pugword","desc":"好看的密码保险箱","appId":"1307617053"],
                 ["title": "寻色","icon":"colorcapture","desc":"写给大家用的配色APP","appId":"1439521846"],
                 ["title": "番茄清单","icon":"fanqieqingdan","desc":"随时随地记录，解放你的大脑","appId":"1150993112"]
             ]
