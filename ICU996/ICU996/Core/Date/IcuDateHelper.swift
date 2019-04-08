@@ -86,15 +86,31 @@ class IcuDateHelper: NSObject {
     }
     
     
-    /// 判断是否是假期
+    /// 判断今天是否是假期
     ///
     /// - Returns: <#return value description#>
-    public func isHoliday() -> (Bool, String) {
+    public func isHoliday(_ date: Date = Date()) -> (Bool, String) {
         let year = getYear()
         let dateFormat = DateFormatter()
-        let date = Date()
         dateFormat.dateFormat = "yyyy-MM-dd"
         let formattedDate = dateFormat.string(from: date)
+        guard let plistPath = Bundle.main.path(forResource: "data_\(year)", ofType: "plist") else {
+            return (false, "")
+        }
+        if let dic = NSMutableDictionary(contentsOfFile: plistPath) as? Dictionary<String, AnyObject> {
+            if let infoDic = dic[formattedDate] as? Dictionary<String, AnyObject> {
+                if let isWork: Bool = infoDic["should_work"] as? Bool,
+                    let info: String = infoDic["info"] as? String {
+                    return (isWork, info)
+                }
+            }
+        }
+        return (false, "")
+    }
+    
+    public func isHoliday(_ dateString: String) -> (Bool, String) {
+        let formattedDate = dateString
+        let year = dateString[...dateString.index(dateString.startIndex, offsetBy: 3)]
         guard let plistPath = Bundle.main.path(forResource: "data_\(year)", ofType: "plist") else {
             return (false, "")
         }
