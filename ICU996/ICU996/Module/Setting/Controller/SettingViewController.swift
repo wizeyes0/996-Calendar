@@ -167,7 +167,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
 extension SettingViewController {
     func shareApp() {
         var items = Array<Any>()
-        items.append("ICU日历 - 注意身体别再996啦")
+        items.append("996日历 - 注意身体别再 996 啦")
         items.append(UIImage(named: "logo")!)
         items.append(URL(string: "itms-apps://itunes.apple.com/app/id"+"1458273919")!)
         let shareVc = UIActivityViewController(activityItems: items, applicationActivities: nil)
