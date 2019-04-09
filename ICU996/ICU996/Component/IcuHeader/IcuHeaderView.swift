@@ -19,7 +19,7 @@ class IcuHeaderView: UIView {
     
     lazy private var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hi, 今天你996了吗？"
+        label.text = "Hi, 朋友！"
         label.font = UIFont.icuFont(.semibold, size: 28)
         label.textColor = UIColor.showColor()
         return label

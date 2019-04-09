@@ -69,7 +69,8 @@ class IcuCalendarView: UIView {
     
     lazy var quoteLabel: UILabel = {
         let label = UILabel()
-        label.text = "劳动法第三十六条：国家实行劳动者每日工作时间不超过八小时、平均每周工作时间不超过四十四小时的工时制度。"
+//        label.text = "劳动法第三十六条：国家实行劳动者每日工作时间不超过八小时、平均每周工作时间不超过四十四小时的工时制度。"
+        label.text = ICUSaying.nightSaying()
         label.font = UIFont.icuFont(.regular, size: 13)
         label.textAlignment = .center
         label.textColor = UIColor.quoteColor()
