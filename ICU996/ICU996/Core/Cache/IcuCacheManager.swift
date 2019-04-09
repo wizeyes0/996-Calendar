@@ -39,8 +39,12 @@ class IcuCacheManager: NSObject {
             if let punchTime = punchTime {
                 let start = punchTime
                 let end = Date()
-                let days = Calendar.current.dateComponents([.day], from: start, to: end).day ?? 0
-                if days > 0 {
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd"
+                let startDesc = dateFormatter.string(from: start)
+                let endDesc = dateFormatter.string(from: end)
+                if startDesc != endDesc {
                     self.punchTime = nil
                     return false
                 }
