@@ -3,23 +3,23 @@
 [![LICENSE](https://img.shields.io/badge/license-MIT%20(The%20996%20Prohibited%20License)-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 
-### 介绍
+## Introduction
 
-带你逃离 996 的毒鸡汤日历，兼备查询是否应该工作和时薪计算能力。
+带你逃离 996 的毒鸡汤日历，兼备查询是否应该工作和时薪计算能力。(注：使用 996 MIT 协议)_
 
 
-### 安装教程
+## Usage
 
-需要安装 `bundle`。
+需要安装 `bundle` 环境来控制 `CocoaPods` 版本，避免覆盖系统环境。
 
 ```bash
-$ cd 996
-$ bundle install
+$ git clone https://github.com/Desgard/996-Calendar.git & cd 996
+$ bundle i
 $ cd ICU996
 $ pod install
 ```
 
-### LICENSE
+## LICENSE
 
 Copyright (c) 2019 ICU 日历
 
