@@ -39,7 +39,7 @@ class IcuSailingPopView: UIView {
 
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "还在上班哦！请继续划水😆"
+        label.text = "上班时间，好好工作！"
         label.font = UIFont.icuFont(.medium, size: 15)
         label.alpha = 0
         return label
