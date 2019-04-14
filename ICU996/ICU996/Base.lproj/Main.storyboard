@@ -210,7 +210,7 @@
                                         <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="感谢广大程序员一路同行，996日历的诞生离不开各位的贡献。我们将不忘初心，继续带来更多优质的 App。" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alw-9O-8aq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="感谢广大程序员一路同行，965日历的诞生离不开各位的贡献。我们将不忘初心，继续带来更多优质的 App。" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alw-9O-8aq">
                                         <rect key="frame" x="20" y="263" width="374" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Lyp-If-aIK"/>

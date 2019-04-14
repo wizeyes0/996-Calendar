@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 每天固定早上9点、晚上22：00发出通知
         let dayNotification = DLNotification(identifier: "dayNotification", alertTitle: "早上好", alertBody: ICUSaying.morningSaying(), date: Date(timeIntervalSince1970: 1*60*60) , repeats: .daily)
         
-        let nightNotification = DLNotification(identifier: "nightNotification", alertTitle: "今天996了吗？", alertBody: ICUSaying.nightSaying(), date: Date(timeIntervalSince1970: 14*60*60) , repeats: .daily)
+        let nightNotification = DLNotification(identifier: "nightNotification", alertTitle: "今天也要965哦！", alertBody: ICUSaying.nightSaying(), date: Date(timeIntervalSince1970: 14*60*60) , repeats: .daily)
         
         //添加到系统通知中
         let scheduler = DLNotificationScheduler()

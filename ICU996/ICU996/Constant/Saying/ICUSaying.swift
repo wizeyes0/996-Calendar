@@ -70,7 +70,7 @@ class ICUSaying: NSObject {
     enum Positive: String {
         case a = "为了家庭还在拼搏的你，辛苦了啊"
         case b = "虽然你赚的钱多，但是也得保重身体才能花啊"
-        case c = "生活不止996，还有诗和远方"
+        case c = "生活有了965，就有诗和远方"
         case d = "新的一天开始了，准备好迎接挑战了吗？"
         case e = "Family, Duty, Honor"
         case f = "Growing Strong"

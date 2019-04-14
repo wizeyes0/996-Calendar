@@ -24,14 +24,14 @@
                                     <constraint firstAttribute="width" secondItem="Z8s-mm-gkx" secondAttribute="height" id="U5I-rR-udu"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="996日历" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wOw-7p-X0y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="965日历" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wOw-7p-X0y">
                                 <rect key="frame" x="103.66666666666669" y="373" width="207" height="42"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="996, 再也不见" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tM-PW-U50">
-                                <rect key="frame" x="149.33333333333334" y="428" width="115.33333333333334" height="71"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="965, 天天见" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tM-PW-U50">
+                                <rect key="frame" x="158.33333333333334" y="428" width="97.333333333333343" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="79H-Mj-6CG"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="8qR-6D-klT"/>

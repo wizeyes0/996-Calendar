@@ -20,7 +20,7 @@ class SettingViewController: UIViewController {
             ],
             [
                 ["title": "隐私条例","icon":"privacy"],
-                ["title": "分享996日历","icon":"share"],
+                ["title": "分享965日历","icon":"share"],
                 //["title": "意见反馈","icon":"feedback"],
                 ["title": "关于我们","icon":"aboutus"]
             ],
@@ -167,7 +167,7 @@ extension SettingViewController : UITableViewDelegate, UITableViewDataSource {
 extension SettingViewController {
     func shareApp() {
         var items = Array<Any>()
-        items.append("996日历 - 注意身体别再 996 啦")
+        items.append("965日历 - 好好生活")
         items.append(UIImage(named: "logo")!)
         items.append(URL(string: "itms-apps://itunes.apple.com/app/id"+"1458273919")!)
         let shareVc = UIActivityViewController(activityItems: items, applicationActivities: nil)
